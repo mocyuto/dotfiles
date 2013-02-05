@@ -168,6 +168,10 @@
 (define-key global-map (kbd "C-M-j") 'windmove-down)
 (define-key global-map (kbd "C-M-l") 'windmove-right)
 (define-key global-map (kbd "C-M-h") 'windmove-left)
+
+;; タブをスペース4つにする
+(setq-default tab-width 4 indent-tabs-mode nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        補完          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -196,8 +200,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-hook 'python-mode-hook
-	  '(lambda ()
-	     (hs-minor-mode 1)))
+          '(lambda ()
+             (hs-minor-mode 1)))
 (define-key
   global-map
   (kbd "C-c 3") 'hs-toggle-hiding)
@@ -235,7 +239,7 @@ interpreter-mode-alist))
 (autoload 'python-mode "python-mode" "Python editing mode." t)
 
 ;; pycomplete
-(add-hook 'python-mode-hook '(lambda () 
+(add-hook 'python-mode-hook '(lambda ()
      (require 'pycomplete)))
 
 
@@ -286,23 +290,23 @@ interpreter-mode-alist))
                            ((string-match "lualatex\\|xelatex" tex-command) "/usr/texbin/bibtexu")
                            (t "/usr/texbin/bibtex")))
 (setq YaTeX-no-begend-shortcut t
-      YaTeX-kanji-code 4
-      YaTeX-use-hilit19 nil
-      YaTeX-use-font-lock nil)
+      YaTeX-kanji-code 4)
+;      YaTeX-use-hilit19 nil
+;      YaTeX-use-font-lock nil)
 ;AMS-LaTeX を使用する
 (setq YaTeX-use-AMS-LaTeX t)
 
-(if window-system
-    (progn
-      (require 'font-latex)
-      (add-hook 'yatex-mode-hook 'font-latex-setup 'append)
-      (add-hook 'yatex-mode-hook 'turn-on-font-lock 'append)))
+;(if window-system
+;    (progn
+;      (require 'font-latex)
+;      (add-hook 'yatex-mode-hook 'font-latex-setup 'append)
+;      (add-hook 'yatex-mode-hook 'turn-on-font-lock 'append)))
 
 ;YaTeXでコメントアウト、解除を割り当てる
 (add-hook 'yatex-mode-hook
-	    '(lambda ()
-	       (local-set-key "\C-c\C-c" 'comment-region)
-	       (local-set-key "\C-c\C-u" 'uncomment-region) ))
+	  '(lambda ()
+	     (local-set-key "\C-c\C-c" 'comment-region)
+	     (local-set-key "\C-c\C-u" 'uncomment-region) ))
 
 
 ; RefTeXをYaTeXで使えるようにする
@@ -317,35 +321,35 @@ interpreter-mode-alist))
 ;;RefTeXにおいて数式の引用を\eqrefにする
 (setq reftex-label-alist '((nil ?e nil "~\\eqref{%s}" nil nil)))
 ;; hilit19 は使わない。更にフェイスを追加して、色をカスタマイズ。
-(setq YaTeX-use-hilit19 nil)
-(setq YaTeX-use-font-lock nil)
-(if window-system
-    (progn
-      (require 'font-latex)
-      (add-hook 'yatex-mode-hook 'font-latex-setup)
-      (add-hook 'yatex-mode-hook 'turn-on-font-lock 'append)))
+;(setq YaTeX-use-hilit19 nil)
+;(setq YaTeX-use-font-lock nil)
+;(if window-system
+;    (progn
+;      (require 'font-latex)
+;      (add-hook 'yatex-mode-hook 'font-latex-setup)
+;      (add-hook 'yatex-mode-hook 'turn-on-font-lock 'append)))
 
-(cond
- ((featurep 'font-lock)
-  (defface font-latex-math-face
-    '((((class grayscale) (background light)) 
-       (:foreground "DimGray" :underline t))
-      (((class grayscale) (background dark)) 
-       (:foreground "LightGray" :underline t))
-      (((class color) (background light)) (:foreground "SaddleBrown"))
-      (((class color) (background dark))  (:foreground "burlywood"))
-      (t (:underline t)))
-    "Font Lock mode face used to highlight math in LaTeX."
-    :group 'font-latex-highlighting-faces)
-  
-  (defface font-latex-label-face
-    '((((class static-color)) (:foreground "yellow" :underline t))
-      (((type tty)) (:foreground "yellow" :underline t))
-      (((class color) (background dark)) (:foreground "pink"))
-      (((class color) (background light)) (:foreground "ForestGreen"))
-      (t (:bold t :underline t)))
-    "Font Lock mode face used to highlight labels."
-    :group 'font-lock-faces)))
-
-(setq YaTeX-font-lock-formula-face 'font-latex-math-face
-      YaTeX-font-lock-label-face 'font-latex-label-face)
+;(cond
+; ((featurep 'font-lock)
+;  (defface font-latex-math-face
+;    '((((class grayscale) (background light)) 
+;       (:foreground "DimGray" :underline t))
+;      (((class grayscale) (background dark)) 
+;       (:foreground "LightGray" :underline t))
+;      (((class color) (background light)) (:foreground "SaddleBrown"))
+;      (((class color) (background dark))  (:foreground "burlywood"))
+;      (t (:underline t)))
+;    "Font Lock mode face used to highlight math in LaTeX."
+;    :group 'font-latex-highlighting-faces)
+;  
+;  (defface font-latex-label-face
+;    '((((class static-color)) (:foreground "yellow" :underline t))
+;      (((type tty)) (:foreground "yellow" :underline t))
+;      (((class color) (background dark)) (:foreground "pink"))
+;      (((class color) (background light)) (:foreground "ForestGreen"))
+;      (t (:bold t :underline t)))
+;    "Font Lock mode face used to highlight labels."
+;    :group 'font-lock-faces)))
+;
+;(setq YaTeX-font-lock-formula-face 'font-latex-math-face
+ ;     YaTeX-font-lock-label-face 'font-latex-label-face)
