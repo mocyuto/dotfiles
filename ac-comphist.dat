@@ -1,0 +1,74 @@
+((("hline" .
+   [1 1 0 0 2])
+  ("multirow" .
+   [0 0 0 0 0 1 0 0])
+  ("shortstack" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("payline" .
+   [0 0 0 0 0 0 1])
+  ("print_dic" .
+   [0 0 0 0 0 0 0 0 1])
+  ("count_words" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("def" .
+   [1 0 0])
+  ("finisheddate" .
+   [0 0 0 0 0 0 0 0 0 0 0 1])
+  ("finish" .
+   [0 0 0 0 0 1])
+  ("datetime" .
+   [0 0 0 0 0 0 0 3])
+  ("self" .
+   [0 0 0 3])
+  ("duedate" .
+   [0 0 0 0 0 0 6])
+  ("description" .
+   [0 0 0 1 0 0 0 0 0 0 2])
+  ("addeddate" .
+   [0 0 0 0 0 0 0 0 3])
+  ("BufferedReader" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("mapInfo" .
+   [0 0 1 2 0 0 8])
+  ("mapstatus" .
+   [0 0 0 0 0 0 0 0 1])
+  ("get_map_info" .
+   [0 0 0 0 0 0 0 0 0 0 0 1])
+  ("mapand" .
+   [0 0 0 0 0 1])
+  ("todos" .
+   [0 0 1 0 0])
+  ("listbox" .
+   [0 0 0 0 0 0 1])
+  ("title" .
+   [0 0 0 0 1])
+  ("refrectentries" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("duedate_e" .
+   [0 0 0 0 0 0 0 1 0])
+  ("description_e" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("refreshitems" .
+   [0 0 0 0 0 1 0 0 0 0 0 0])
+  ("setlistitems" .
+   [0 0 0 0 0 0 0 0 0 0 0 1])
+  ("ToDoContainer" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("freq" .
+   [0 0 0 1])
+  ("sim_between" .
+   [0 0 0 1 0 0 0 0 0 0 1])
+  ("bitarr" .
+   [0 0 0 0 0 2])
+  ("salt" .
+   [0 0 0 2])
+  ("hashes" .
+   [0 0 0 1 0 2])
+  ("numOfBit" .
+   [0 0 0 0 0 0 0 1])
+  ("bitLength" .
+   [0 0 0 0 1 0 0 0 3])
+  ("numHash" .
+   [0 0 0 0 0 0 1])
+  ("BloomFilter" .
+   [0 0 0 0 0 0 0 0 0 0 1])))
