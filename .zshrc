@@ -17,7 +17,7 @@ PROMPT="
  %{${fg[green]}%}%B%/%b%{${reset_color}%}
 [%n@%m]$ "
 
-PROMPT2='[%n]> ' 
+PROMPT2='[%n]> '
 
 # 右側に時間を表示する
 RPROMPT="%T"
@@ -124,53 +124,31 @@ REPORTTIME=3
 # expand aliases before completing
 #
 setopt complete_aliases     # aliased ls needs if file/dir completions work
+#setopt extendedglob
 
 alias where="command -v"
 alias j="jobs -l"
 
 case "${OSTYPE}" in
-freebsd*|darwin*)
-    alias ls="ls -G -w"
-    ;;
+darwin*)
+alias ls="ls -G"
+alias ll="ls -lG"
+alias la="ls -laG"
+;;
 linux*)
-    alias ls="ls --color"
-    ;;
+alias ls='ls --color'
+alias ll='ls -l --color'
+alias la='ls -la --color'
+;;
 esac
 
+#alias la="ls -a"
 alias du="du -h"
 alias df="df -h"
 
 alias su="su -l"
 alias sl="ls"
-alias ls="ls --color=auto --hide='*.pyc'"
-
-case "${OSTYPE}" in
-darwin*)
-    alias updateports="sudo port selfupdate; sudo port outdated"
-    alias portupgrade="sudo port upgrade installed"
-    ;;
-freebsd*)
-    case ${UID} in
-    0)
-        updateports() 
-        {
-            if [ -f /usr/ports/.portsnap.INDEX ]
-            then
-                portsnap fetch update
-            else
-                portsnap fetch extract update
-            fi
-            (cd /usr/ports/; make index)
-
-            portversion -v -l \<
-        }
-        alias appsupgrade='pkgdb -F && BATCH=YES NO_CHECKSUM=YES portupgrade -a'
-        ;;
-    esac
-    ;;
-esac
-
-
+#alias ls="ls --color=auto --hide='*.pyc'"
 
 ## load user .zshrc configuration file
 #
