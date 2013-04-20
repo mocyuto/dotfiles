@@ -4,9 +4,6 @@
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 (setq load-path(append(list(expand-file-name "~/.emacs.d"))load-path))
 
-;;auto-complete
-(setq load-path (cons "~/.emacs.d/auto-complete-1.3.1" load-path))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        基本          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -99,7 +96,6 @@
 (setq hl-line-face 'underline) ; 下線
 (global-hl-line-mode)
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        補完          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -108,19 +104,36 @@
 (global-auto-complete-mode t)
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
 (setq read-file-name-completion-ignore-case t)
-
 (require 'auto-complete-latex)
 
 ;;補完が自動で起動するのを停止
-(setq ac-auto-start nil)
+;; (setq ac-auto-start nil)
 ;;補完の起動キーの設定
-(ac-set-trigger-key "TAB")
+;; (global-set-key "\M-/" 'ac-start)
 ;;括弧の補完
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 (setq skeleton-pair 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;          yasnippet          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;        ac-anything          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 古い
+;(require 'ac-anything)
+;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
+;; 最新
+(add-to-list 'load-path "~/.emacs.d/anything-config/")
+(require 'anything-config)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        折り畳み          ;;
