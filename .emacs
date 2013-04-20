@@ -1,128 +1,11 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;        表示          ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;        Load Path          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq load-path (cons "~/.emacs.d/elisp" load-path))
+(setq load-path(append(list(expand-file-name "~/.emacs.d"))load-path))
 
-;;対応する括弧をハイライト表示させる設定
-(show-paren-mode t)
-
-;同名のファイルを開いたとき Switch to buffer などでファイル名がわかりやすく見えるようになる設定
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-
-;選択されたリージョンを色付きにしてわかりやすくする設定
-(setq-default transient-mark-mode t)
-
-;; マッチした場合の色
-(set-face-background 'show-paren-match-face "RoyalBlue1")
-(set-face-foreground 'show-paren-match-face "black")
-;; マッチしていない場合の色
-(set-face-background 'show-paren-mismatch-face "Red")
-(set-face-foreground 'show-paren-mismatch-face "black")
-
-;;メニューを日本語化
-;(require 'menu-tree t)
-
-;;画像ファイルを表示する
-(auto-image-file-mode t)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; タブ、全角スペースを表示する
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defface my-face-r-1 '((t (:background "gray15"))) nil)
-(defface my-face-b-1 '((t (:background "gray"))) nil)
-(defface my-face-b-2 '((t (:background "gray26"))) nil)
-(defface my-face-u-1 '((t (:foreground "red" :underline t))) nil)
-(defvar my-face-r-1 'my-face-r-1)
-(defvar my-face-b-1 'my-face-b-1)
-(defvar my-face-b-2 'my-face-b-2)
-(defvar my-face-u-1 'my-face-u-1)
-(defadvice font-lock-mode (before my-font-lock-mode())
-  (font-lock-add-keywords
-   major-mode
-   '(
-     ("\t" 0 my-face-b-2 append)
-     ("　" 0 my-face-b-2 append)
-     ("[ \t]+$" 0 my-face-u-1 append)
-     (" [\r]*\n" 0 my-face-r-1 append)
-     )))
-(ad-enable-advice 'font-lock-mode 'before 'my-font-lock-mode)
-(ad-activate 'font-lock-mode)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;
-;;  View-mode  ;;
-;;;;;;;;;;;;;;;;;
-
-;;view-modeをデフォルトにする
-(add-hook 'find-file-hook
-          '(lambda ()
-             (interactive)
-             (view-mode)))
-(setq view-read-only t)
-
-;;キーバインド定義
-(defvar pager-keybind
-  `( ;; vi-like
-    ("h" . backward-char)
-    ("j" . next-line)
-    ("k" . previous-line)
-    ("l" . forward-char)
-    ("n" . ,(lambda () (interactive) (scroll-up 1)))
-    ("p" . ,(lambda () (interactive) (scroll-down 1)))
-    ))
-(defun define-many-keys (keymap key-table &optional includes)
-  (let (key cmd)
-    (dolist (key-cmd key-table)
-      (setq key (car key-cmd)
-            cmd (cdr key-cmd))
-      (if (or (not includes) (member key includes))
-        (define-key keymap key cmd))))
-  keymap)
-(defun view-mode-hook0 ()
-  (define-many-keys view-mode-map pager-keybind)
-  (hl-line-mode 1))
-(add-hook 'view-mode-hook 'view-mode-hook0)
-
-;;jk同時押しでview-modeに移行
-(setq load-path (cons "~/.emacs.d/" load-path))
-(require 'key-chord)
-(setq key-chord-two-keys-delay 0.03)
-(key-chord-mode 1)
-(key-chord-define-global "jk" 'view-mode)
-
-;; 書き込み不能なファイルはview-modeで開くように
-(defadvice find-file
-  (around find-file-switch-to-view-file (file &optional wild) activate)
-  (if (and (not (file-writable-p file))
-           (not (file-directory-p file)))
-      (view-file file)
-    ad-do-it))
-;; 書き込み不能な場合はview-modeを抜けないように
-(defvar view-mode-force-exit nil)
-(defmacro do-not-exit-view-mode-unless-writable-advice (f)
-  `(defadvice ,f (around do-not-exit-view-mode-unless-writable activate)
-     (if (and (buffer-file-name)
-              (not view-mode-force-exit)
-              (not (file-writable-p (buffer-file-name))))
-         (message "File is unwritable, so stay in view-mode.")
-       ad-do-it)))
-(do-not-exit-view-mode-unless-writable-advice view-mode-exit)
-(do-not-exit-view-mode-unless-writable-advice view-mode-disable)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;            編集行を目立たせる（現在行をハイライト表示する）               ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defface hlline-face
-  '((((class color)
-      (background dark))
-     (:background "dark slate gray"))
-    (((class color)
-      (background light))
-     (:background "ForestGreen"))
-    (t
-     ()))
-  "*Face used by hl-line.")
-;;(setq hl-line-face 'hlline-face)
-(setq hl-line-face 'underline) ; 下線
-(global-hl-line-mode)
+;;auto-complete
+(setq load-path (cons "~/.emacs.d/auto-complete-1.3.1" load-path))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        基本          ;;
@@ -173,11 +56,54 @@
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;        表示          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;対応する括弧をハイライト表示させる設定
+(show-paren-mode t)
+
+;同名のファイルを開いたとき Switch to buffer などでファイル名がわかりやすく見えるようになる設定
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+;選択されたリージョンを色付きにしてわかりやすくする設定
+(setq-default transient-mark-mode t)
+
+;; マッチした場合の色
+(set-face-background 'show-paren-match-face "RoyalBlue1")
+(set-face-foreground 'show-paren-match-face "black")
+;; マッチしていない場合の色
+(set-face-background 'show-paren-mismatch-face "Red")
+(set-face-foreground 'show-paren-mismatch-face "black")
+
+;;メニューを日本語化
+;(require 'menu-tree t)
+
+;;画像ファイルを表示する
+(auto-image-file-mode t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;            編集行を目立たせる（現在行をハイライト表示する）               ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defface hlline-face
+  '((((class color)
+      (background dark))
+     (:background "dark slate gray"))
+    (((class color)
+      (background light))
+     (:background "ForestGreen"))
+    (t
+     ()))
+  "*Face used by hl-line.")
+;;(setq hl-line-face 'hlline-face)
+(setq hl-line-face 'underline) ; 下線
+(global-hl-line-mode)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        補完          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;auto-complete
-(setq load-path (cons "~/.emacs.d/auto-complete-1.3.1" load-path))
 (require 'auto-complete)
 (global-auto-complete-mode t)
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
@@ -195,6 +121,7 @@
 (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 (setq skeleton-pair 1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        折り畳み          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -206,18 +133,88 @@
   global-map
   (kbd "C-c 3") 'hs-toggle-hiding)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;        Load Path          ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq load-path(append(list(expand-file-name "~/.emacs.d"))load-path))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;          Lookup           ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(autoload 'lookup "lookup" nil t)
-;(autoload 'lookup-region "lookup" nil t)
-;(autoload 'lookup-pattern "lookup" nil t)
-;(setq lookup-search-agents '((ndtp "dserver") (ndspell)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; タブ、全角スペースを表示する
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defface my-face-r-1 '((t (:background "gray15"))) nil)
+(defface my-face-b-1 '((t (:background "gray"))) nil)
+(defface my-face-b-2 '((t (:background "gray26"))) nil)
+(defface my-face-u-1 '((t (:foreground "red" :underline t))) nil)
+(defvar my-face-r-1 'my-face-r-1)
+(defvar my-face-b-1 'my-face-b-1)
+(defvar my-face-b-2 'my-face-b-2)
+(defvar my-face-u-1 'my-face-u-1)
+(defadvice font-lock-mode (before my-font-lock-mode())
+  (font-lock-add-keywords
+   major-mode
+   '(
+     ("\t" 0 my-face-b-2 append)
+     ("　" 0 my-face-b-2 append)
+     ("[ \t]+$" 0 my-face-u-1 append)
+     (" [\r]*\n" 0 my-face-r-1 append)
+     )))
+(ad-enable-advice 'font-lock-mode 'before 'my-font-lock-mode)
+(ad-activate 'font-lock-mode)
+
+
+;;;;;;;;;;;;;;;;;
+;;  View-mode  ;;
+;;;;;;;;;;;;;;;;;
+
+;;view-modeをデフォルトにする
+(add-hook 'find-file-hook
+          '(lambda ()
+             (interactive)
+             (view-mode)))
+(setq view-read-only t)
+
+;;キーバインド定義
+(defvar pager-keybind
+  `( ;; vi-like
+    ("h" . backward-char)
+    ("j" . next-line)
+    ("k" . previous-line)
+    ("l" . forward-char)
+    ("n" . ,(lambda () (interactive) (scroll-up 1)))
+    ("p" . ,(lambda () (interactive) (scroll-down 1)))
+    ))
+(defun define-many-keys (keymap key-table &optional includes)
+  (let (key cmd)
+    (dolist (key-cmd key-table)
+      (setq key (car key-cmd)
+            cmd (cdr key-cmd))
+      (if (or (not includes) (member key includes))
+        (define-key keymap key cmd))))
+  keymap)
+(defun view-mode-hook0 ()
+  (define-many-keys view-mode-map pager-keybind)
+  (hl-line-mode 1))
+(add-hook 'view-mode-hook 'view-mode-hook0)
+
+(require 'key-chord)
+(setq key-chord-two-keys-delay 0.03)
+(key-chord-mode 1)
+(key-chord-define-global "jk" 'view-mode)
+
+;; 書き込み不能なファイルはview-modeで開くように
+(defadvice find-file
+  (around find-file-switch-to-view-file (file &optional wild) activate)
+  (if (and (not (file-writable-p file))
+           (not (file-directory-p file)))
+      (view-file file)
+    ad-do-it))
+;; 書き込み不能な場合はview-modeを抜けないように
+(defvar view-mode-force-exit nil)
+(defmacro do-not-exit-view-mode-unless-writable-advice (f)
+  `(defadvice ,f (around do-not-exit-view-mode-unless-writable activate)
+     (if (and (buffer-file-name)
+              (not view-mode-force-exit)
+              (not (file-writable-p (buffer-file-name))))
+         (message "File is unwritable, so stay in view-mode.")
+       ad-do-it)))
+(do-not-exit-view-mode-unless-writable-advice view-mode-exit)
+(do-not-exit-view-mode-unless-writable-advice view-mode-disable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        Python          ;;
@@ -288,6 +285,16 @@ interpreter-mode-alist))
 
 ;;multi-term の起動のショートカットを作る
 (global-set-key (kbd "C-c m") 'multi-term)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;      elisp-install       ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; まず、install-elisp のコマンドを使える様にします。
+(require 'install-elisp)
+;; 次に、Elisp ファイルをインストールする場所を指定します。
+(setq install-elisp-repository-directory "~/.emacs.d/elisp/")
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;      TeX       ;;;
