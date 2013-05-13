@@ -3,6 +3,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 (setq load-path(append(list(expand-file-name "~/.emacs.d"))load-path))
+;; ↓とにかく設定ファイルの最初のほうで読みこむ
+(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
+(add-to-list 'load-path "~/.emacs.d/jdee/dist/jdee-2.4.1/lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        基本          ;;
@@ -96,15 +99,93 @@
 (setq hl-line-face 'underline) ; 下線
 (global-hl-line-mode)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;          yasnippet          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'cl)
+;; 問い合わせを簡略化
+(fset 'yes-or-no-p 'y-or-n-p)
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets" ;; 作成するスニペットはここに入る
+        "~/.emacs.d/yasnippet/snippets" ;; 最初から入っていたスニペット
+        ))
+(yas-global-mode 1)
+
+;; 単語展開キーバインド (ver8.0から明記しないと機能しない)
+;; (setqだとtermなどで干渉問題ありでした)
+;; もちろんTAB以外でもOK 例えば "C-;"とか
+(custom-set-variables '(yas-trigger-key "TAB"))
+;; 既存スニペットを挿入する
+(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
+;; 新規スニペットを作成するバッファを用意する
+(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
+;; 既存スニペットを閲覧・編集する
+(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+;;; [2010/07/13]
+;; (defun yas/expand-link (key)
+;;   "Hyperlink function for yasnippet expansion."
+;;   (delete-region (point-at-bol) (1+ (point-at-eol)))
+;;   (insert key)
+;;   (yas/expand))
+;;; [2010/12/02]
+;; (defun yas/expand-link-choice (&rest keys)
+;;   "Hyperlink to select yasnippet template."
+;;   (yas/expand-link (completing-read "Select template: " keys nil t)))
+;; (yas/expand-link-choice "defgp" "defcm")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;        ac-anything          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 古い
+;(require 'ac-anything)
+;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
+;; 最新
+(require 'anything)
+(add-to-list 'load-path "~/.emacs.d/anything-config/")
+(require 'anything-config)
+(add-to-list 'anything-sources 'anything-c-source-emacs-commands)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        補完          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; パスを通す
+(defvar ac-dir (expand-file-name "~/.emacs.d/auto-complete"))
+(add-to-list 'load-path ac-dir)
+(add-to-list 'load-path (concat ac-dir "/lib/ert"))
+(add-to-list 'load-path (concat ac-dir "/lib/fuzzy"))
+(add-to-list 'load-path (concat ac-dir "/lib/popup"))
+
+;; 適用するメジャーモードを足す
+(setq ac-modes (append '(web-mode)))
+(setq ac-modes (append '(scss-mode)))
+(setq ac-modes (append '(html-mode)))
+;;(add-to-list 'ac-modes 'scss-mode)
+;;(add-to-list 'ac-modes 'web-mode)
+;;(add-to-list 'ac-mode 'coffee-mode)
+
+;;; ベースとなるソースを指定
+;; (defvar my-ac-sources
+;;               '(ac-source-yasnippet
+;;                 ac-source-abbrev
+;;                 ac-source-dictionary
+;;                 ac-source-words-in-same-mode-buffers))
 
 (require 'auto-complete)
 (global-auto-complete-mode t)
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
 (setq read-file-name-completion-ignore-case t)
-(require 'auto-complete-latex)
+;;(require 'auto-complete-latex)
+
+
+(when (require 'auto-complete-config nil t)
+;; C-n/C-pで候補選択可能
+(setq ac-use-menu-map t)
+(setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
+  (setq ac-comphist-file "~/.emacs.d/elisp/auto-complete/ac-comphist.dat") ;; 補完履歴のキャッシュ先
+)
 
 ;;補完が自動で起動するのを停止
 ;; (setq ac-auto-start nil)
@@ -117,23 +198,6 @@
 (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 (setq skeleton-pair 1)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;          yasnippet          ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;        ac-anything          ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 古い
-;(require 'ac-anything)
-;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
-;; 最新
-(add-to-list 'load-path "~/.emacs.d/anything-config/")
-(require 'anything-config)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        折り畳み          ;;
@@ -252,31 +316,76 @@ interpreter-mode-alist))
 (add-hook 'python-mode-hook '(lambda ()
      (require 'pycomplete)))
 
+;; auto-complete for python
+(require 'ac-python)
+(add-to-list 'ac-modes 'python-2-mode)
+
+
+;; pysmell
+;; (require 'pysmell)
+;; (add-hook 'python-mode-hook (lambda () (pysmell-mode 1)))
+;; (defvar ac-source-pysmell
+;;   '((candidates
+;;      . (lambda ()
+;;          (require 'pysmell)
+;;          (pysmell-get-all-completions))))
+;;   "Source for PySmell")
+
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (set (make-local-variable 'ac-sources)
+                  (append ac-sources '(ac-source-pysmell)))))
 
 ;;;;;;;;;;;;;;;;;;
 ;;     Java     ;;
 ;;;;;;;;;;;;;;;;;;
 
-(require 'cedet)
-;(semantic-load-enable-minimum-features)
-(when (require 'malabar-mode nil t)
-  (setq malabar-groovy-lib-dir (concat user-emacs-directory "lisp/malabar-1.5-SNAPSHOT/lib"))
-  (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
-  ;; 日本語だとコンパイルエラーメッセージが化けるのでlanguageをenに設定
-  (setq malabar-groovy-java-options '("-Duser.language=en"))
-  ;; 普段使わないパッケージを import 候補から除外
-  (setq malabar-import-excluded-classes-regexp-list
-        (append
-         '(
-           "^java\\.awt\\..*$"
-           "^com\\.sun\\..*$"
-           "^org\\.omg\\..*$"
-           ) malabar-import-excluded-classes-regexp-list))
-  (add-hook 'malabar-mode-hook
-            (lambda ()
-              (add-hook 'after-save-hook 'malabar-compile-file-silently
-                        nil t)))
-)
+;; (load "jde-autoload")
+
+;; (defun my-jde-mode-hook ()
+;;   (require 'jde)
+
+;;   (setq jde-build-function 'jde-ant-build) ; ビルドにantを利用する
+;;   (setq jde-ant-read-target t)             ; targetを問い合わせる
+;;   (setq jde-ant-enable-find t)             ; antに-findオプションを指定する(要らないかも)
+
+;;   ;; complilationバッファを自動的にスクロールさせる
+;;   (setq compilation-ask-about-save nil)
+;;   (setq compilation-scroll-output 'first-error)
+
+;;   (define-key jde-mode-map (kbd "C-c C-v .") 'jde-complete-minibuf)
+;;   )
+
+;; (add-hook 'jde-mode-hook 'my-jde-mode-hook)
+
+;; (require 'cedet)
+;; ;(semantic-load-enable-minimum-features)
+;; (when (require 'malabar-mode nil t)
+;;   (setq malabar-groovy-lib-dir (concat user-emacs-directory "lisp/malabar-1.5-SNAPSHOT/lib"))
+;;   (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
+;;   ;; 日本語だとコンパイルエラーメッセージが化けるのでlanguageをenに設定
+;;   (setq malabar-groovy-java-options '("-Duser.language=en"))
+;;   ;; 普段使わないパッケージを import 候補から除外
+;;   (setq malabar-import-excluded-classes-regexp-list
+;;         (append
+;;          '(
+;;            "^java\\.awt\\..*$"
+;;            "^com\\.sun\\..*$"
+;;            "^org\\.omg\\..*$"
+;;            ) malabar-import-excluded-classes-regexp-list))
+;;   (add-hook 'malabar-mode-hook
+;;             (lambda ()
+;;               (add-hook 'after-save-hook 'malabar-compile-file-silently
+;;                         nil t)))
+;; )
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;;;;   js2-mode  ;;;;
+;;;;;;;;;;;;;;;;;;;;;
+
+;(autoload 'js2-mode "js2" nil t)
+;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;;;;;;;;;;;;;
 ;;;; term ;;;
@@ -308,6 +417,11 @@ interpreter-mode-alist))
 (require 'install-elisp)
 ;; 次に、Elisp ファイルをインストールする場所を指定します。
 (setq install-elisp-repository-directory "~/.emacs.d/elisp/")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;         flymake          ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'flymake)
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;      TeX       ;;;
