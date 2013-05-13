@@ -158,14 +158,6 @@
 (add-to-list 'load-path (concat ac-dir "/lib/fuzzy"))
 (add-to-list 'load-path (concat ac-dir "/lib/popup"))
 
-;; 適用するメジャーモードを足す
-(setq ac-modes (append '(web-mode)))
-(setq ac-modes (append '(scss-mode)))
-(setq ac-modes (append '(html-mode)))
-;;(add-to-list 'ac-modes 'scss-mode)
-;;(add-to-list 'ac-modes 'web-mode)
-;;(add-to-list 'ac-mode 'coffee-mode)
-
 ;;; ベースとなるソースを指定
 ;; (defvar my-ac-sources
 ;;               '(ac-source-yasnippet
@@ -181,14 +173,13 @@
 
 
 (when (require 'auto-complete-config nil t)
-;; C-n/C-pで候補選択可能
-(setq ac-use-menu-map t)
-(setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
+  (setq ac-use-menu-map t);; C-n/C-pで候補選択可能
+  (setq ac-dwim t) ;; 空気を読む
+  (setq ac-auto-start 3) ;;補完が自動で起動するのを停止
+  (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
   (setq ac-comphist-file "~/.emacs.d/elisp/auto-complete/ac-comphist.dat") ;; 補完履歴のキャッシュ先
 )
 
-;;補完が自動で起動するのを停止
-;; (setq ac-auto-start nil)
 ;;補完の起動キーの設定
 ;; (global-set-key "\M-/" 'ac-start)
 ;;括弧の補完
@@ -198,6 +189,11 @@
 (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 (setq skeleton-pair 1)
 
+
+;; 適用するメジャーモードを足す
+(add-to-list 'ac-modes '(web-mode) t)
+(add-to-list 'ac-modes '(scss-mode) t)
+(add-to-list 'ac-modes '(html-mode) t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        折り畳み          ;;
