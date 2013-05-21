@@ -174,7 +174,7 @@
 
 (when (require 'auto-complete-config nil t)
   (setq ac-use-menu-map t);; C-n/C-pで候補選択可能
-  (setq ac-dwim t) ;; 空気を読む
+  ;(setq ac-dwim t) ;; 空気を読む
   (setq ac-auto-start 3) ;;補完が自動で起動するのを停止
   (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
   (setq ac-comphist-file "~/.emacs.d/elisp/auto-complete/ac-comphist.dat") ;; 補完履歴のキャッシュ先
@@ -191,9 +191,15 @@
 
 
 ;; 適用するメジャーモードを足す
-(add-to-list 'ac-modes '(web-mode) t)
-(add-to-list 'ac-modes '(scss-mode) t)
-(add-to-list 'ac-modes '(html-mode) t)
+(setq ac-modes
+      (append ac-modes
+              '(perl-mode cperl-mode html-mode sql-mode vbnet-mode
+                          css-mode actionscript-mode web-mode
+                          js2-mode)))
+;; (add-to-list 'ac-modes '(web-mode) t)
+;; (add-to-list 'ac-modes '(scss-mode) t)
+;; (add-to-list 'ac-modes '(html-mode) )
+;; (add-to-list 'ac-modes '(js-mode) t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        折り畳み          ;;
