@@ -123,13 +123,6 @@
 (define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
 ;; 既存スニペットを閲覧・編集する
 (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
-;;; [2010/07/13]
-;; (defun yas/expand-link (key)
-;;   "Hyperlink function for yasnippet expansion."
-;;   (delete-region (point-at-bol) (1+ (point-at-eol)))
-;;   (insert key)
-;;   (yas/expand))
-;;; [2010/12/02]
 ;; (defun yas/expand-link-choice (&rest keys)
 ;;   "Hyperlink to select yasnippet template."
 ;;   (yas/expand-link (completing-read "Select template: " keys nil t)))
@@ -169,16 +162,17 @@
 (global-auto-complete-mode t)
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
 (setq read-file-name-completion-ignore-case t)
-;;(require 'auto-complete-latex)
 
 
 (when (require 'auto-complete-config nil t)
   (setq ac-use-menu-map t);; C-n/C-pで候補選択可能
-  ;(setq ac-dwim t) ;; 空気を読む
-  (setq ac-auto-start 3) ;;補完が自動で起動するのを停止
+  (setq ac-dwim t) ;; 空気を読む
+  (setq ac-auto-start 2) ;;補完が自動で起動するのを停止
   (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
   (setq ac-comphist-file "~/.emacs.d/elisp/auto-complete/ac-comphist.dat") ;; 補完履歴のキャッシュ先
 )
+;; 補完辞書の参照をデフォルト設定に
+(ac-config-default)
 
 ;;補完の起動キーの設定
 ;; (global-set-key "\M-/" 'ac-start)
@@ -195,7 +189,7 @@
       (append ac-modes
               '(perl-mode cperl-mode html-mode sql-mode vbnet-mode
                           css-mode actionscript-mode web-mode
-                          js2-mode)))
+                          js2-mode )))
 ;; (add-to-list 'ac-modes '(web-mode) t)
 ;; (add-to-list 'ac-modes '(scss-mode) t)
 ;; (add-to-list 'ac-modes '(html-mode) )
@@ -429,6 +423,8 @@ interpreter-mode-alist))
 ;;;      TeX       ;;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
+;;(require 'auto-complete-latex)
+
 ;; TexShop
 (setq auto-mode-alist
       (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
@@ -505,3 +501,12 @@ interpreter-mode-alist))
 ;
 ;(setq YaTeX-font-lock-formula-face 'font-latex-math-face
  ;     YaTeX-font-lock-label-face 'font-latex-label-face)
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;   for io    ;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'auto-mode-alist '("\\.io\\'" . io-mode))
+(autoload 'io-mode "io-mode" "Major mode to edit Io language files in Emacs." t)
+;; tabwidth
+(setq io-tab-width 2)
