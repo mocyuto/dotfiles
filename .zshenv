@@ -36,4 +36,5 @@ export PATH=/usr/local/bin:/usr/local/share/python:$PATH:/Applications/eclipse/a
 # perlbrew用環境設定
 export PATH=$PATH:$HOME/perl5/perlbrew/bin/
 
-# emacs用のPATH設定
+# androidSDK for Mac 用のPATH設定
+export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
