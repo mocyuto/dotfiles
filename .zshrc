@@ -153,3 +153,4 @@ alias sl="ls"
 ## load user .zshrc configuration file
 #
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+[[  -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
