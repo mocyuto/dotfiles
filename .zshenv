@@ -38,9 +38,8 @@ export PATH=/usr/local/bin:/usr/local/share/python:$PATH:/Applications/eclipse/a
 # perlbrew用環境設定
 export PATH=$PATH:$HOME/perl5/perlbrew/bin/
 
-<<<<<<< HEAD
 # emacs用のPATH設定
-alias emacs='emacs-24.3'
+#alias emacs='emacs-24.3'
 
 # javascript用のPATH
 alias js="java -cp ~/Library/rhino1_7R4/js.jar org.mozilla.javascript.tools.shell.Main"
