@@ -4,8 +4,8 @@
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 (setq load-path(append(list(expand-file-name "~/.emacs.d"))load-path))
 ;; ↓とにかく設定ファイルの最初のほうで読みこむ
-(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
-(add-to-list 'load-path "~/.emacs.d/jdee/dist/jdee-2.4.1/lisp")
+;(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
+;(add-to-list 'load-path "~/.emacs.d/jdee/dist/jdee-2.4.1/lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        基本          ;;
