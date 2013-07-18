@@ -151,6 +151,10 @@
 (add-to-list 'load-path (concat ac-dir "/lib/fuzzy"))
 (add-to-list 'load-path (concat ac-dir "/lib/popup"))
 
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
+
 ;;; ベースとなるソースを指定
 ;; (defvar my-ac-sources
 ;;               '(ac-source-yasnippet
@@ -158,8 +162,6 @@
 ;;                 ac-source-dictionary
 ;;                 ac-source-words-in-same-mode-buffers))
 
-(require 'auto-complete)
-(global-auto-complete-mode t)
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
 (setq read-file-name-completion-ignore-case t)
 
@@ -294,27 +296,27 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; pymacs
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-(eval-after-load "pymacs"
-  '(add-to-list 'pymacs-load-path "~/.emacs.d/pymacs_dir"))
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-exec "pymacs" nil t)
+;; (autoload 'pymacs-load "pymacs" nil t)
+;; (eval-after-load "pymacs"
+;;   '(add-to-list 'pymacs-load-path "~/.emacs.d/pymacs_dir"))
 
-;; python-mode
+;; ;; python-mode
 (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-(setq interpreter-mode-alist (cons '("python" . python-mode)
-interpreter-mode-alist))
+;; (setq interpreter-mode-alist (cons '("python" . python-mode)
+;; interpreter-mode-alist))
 (autoload 'python-mode "python-mode" "Python editing mode." t)
 
-;; pycomplete
-(add-hook 'python-mode-hook '(lambda ()
-     (require 'pycomplete)))
+;; ;; pycomplete
+;; ;(add-hook 'python-mode-hook '(lambda ()
+;; ;     (require 'pycomplete)))
 
-;; auto-complete for python
+;; ;; auto-complete for python
 (require 'ac-python)
-(add-to-list 'ac-modes 'python-2-mode)
+(add-to-list 'ac-modes 'python-mode)
 
 
 ;; pysmell
@@ -327,10 +329,10 @@ interpreter-mode-alist))
 ;;          (pysmell-get-all-completions))))
 ;;   "Source for PySmell")
 
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (set (make-local-variable 'ac-sources)
-                  (append ac-sources '(ac-source-pysmell)))))
+;; (add-hook 'python-mode-hook
+;;           '(lambda ()
+;;              (set (make-local-variable 'ac-sources)
+;;                   (append ac-sources '(ac-source-pysmell)))))
 
 ;;;;;;;;;;;;;;;;;;
 ;;     Java     ;;
