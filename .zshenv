@@ -52,3 +52,7 @@ export PIP_RESPECT_VIRTUALENV=true
 
 # androidSDK for Mac 用のPATH設定
 export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
+
+# MAMP mysql用
+alias mmysql="/Applications/MAMP/Library/bin/mysql"
+alias mmysqldump="/Applications/MAMP/Library/bin/mysqldump"
