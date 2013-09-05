@@ -4,6 +4,10 @@ export LANG=ja_JP.UTF-8
 export LSCOLORS=ExFxCxdxBxegedabagacad
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
+# lessカラー設定
+export LESS=' -R'
+export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.7/bin/src-hilite-lesspipe.sh %s"
+
 # gnuplot等のグラフ出力先をX11に指定
 alias gnuplot='/Applications/gnuplot.app/gnuplot'
 export GNUTERM=X11
@@ -52,3 +56,7 @@ export PIP_RESPECT_VIRTUALENV=true
 
 # androidSDK for Mac 用のPATH設定
 export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
+
+# MAMP mysql用
+alias mmysql="/Applications/MAMP/Library/bin/mysql"
+alias mmysqldump="/Applications/MAMP/Library/bin/mysqldump"

@@ -4,8 +4,8 @@
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 (setq load-path(append(list(expand-file-name "~/.emacs.d"))load-path))
 ;; ↓とにかく設定ファイルの最初のほうで読みこむ
-(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
-(add-to-list 'load-path "~/.emacs.d/jdee/dist/jdee-2.4.1/lisp")
+;(load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
+;(add-to-list 'load-path "~/.emacs.d/jdee/dist/jdee-2.4.1/lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        基本          ;;
@@ -102,27 +102,28 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;          yasnippet          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'cl)
-;; 問い合わせを簡略化
-(fset 'yes-or-no-p 'y-or-n-p)
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
-(require 'yasnippet)
-(setq yas-snippet-dirs
-      '("~/.emacs.d/snippets" ;; 作成するスニペットはここに入る
-        "~/.emacs.d/yasnippet/snippets" ;; 最初から入っていたスニペット
-        ))
-(yas-global-mode 1)
+;; (require 'cl)
+;; ;;問い合わせを簡略化
+;; (fset 'yes-or-no-p 'y-or-n-p)
+;; (add-to-list 'load-path "~/.emacs.d/yasnippet")
+;; (require 'yasnippet)
+;; (setq yas-snippet-dirs
+;;       '("~/.emacs.d/snippets" ;; 作成するスニペットはここに入る
+;;         "~/.emacs.d/yasnippet/snippets" ;; 最初から入っていたスニペット
+;;         ))
+;; (yas-global-mode 1)
+
 
 ;; 単語展開キーバインド (ver8.0から明記しないと機能しない)
 ;; (setqだとtermなどで干渉問題ありでした)
 ;; もちろんTAB以外でもOK 例えば "C-;"とか
-(custom-set-variables '(yas-trigger-key "TAB"))
+;(custom-set-variables '(yas-trigger-key "TAB"))
 ;; 既存スニペットを挿入する
-(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
+;(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
 ;; 新規スニペットを作成するバッファを用意する
-(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
+;(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
 ;; 既存スニペットを閲覧・編集する
-(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+;(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 ;; (defun yas/expand-link-choice (&rest keys)
 ;;   "Hyperlink to select yasnippet template."
 ;;   (yas/expand-link (completing-read "Select template: " keys nil t)))
@@ -135,10 +136,10 @@
 ;(require 'ac-anything)
 ;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
 ;; 最新
-(require 'anything)
-(add-to-list 'load-path "~/.emacs.d/anything-config/")
-(require 'anything-config)
-(add-to-list 'anything-sources 'anything-c-source-emacs-commands)
+;; (require 'anything)
+;; (add-to-list 'load-path "~/.emacs.d/anything-config/")
+;; (require 'anything-config)
+;; (add-to-list 'anything-sources 'anything-c-source-emacs-commands)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        補完          ;;
@@ -164,7 +165,6 @@
 
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
 (setq read-file-name-completion-ignore-case t)
-
 
 (when (require 'auto-complete-config nil t)
   (setq ac-use-menu-map t);; C-n/C-pで候補選択可能
@@ -377,6 +377,12 @@
 ;;                         nil t)))
 ;; )
 
+;;;;;;;;;;;;;;;;;;;;;
+;;;;   php-mode  ;;;;
+;;;;;;;;;;;;;;;;;;;;;
+
+;(load-library "php-mode-1.5.0")
+(require 'php-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;   js2-mode  ;;;;
