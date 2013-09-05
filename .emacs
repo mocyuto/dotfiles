@@ -164,7 +164,6 @@
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
 (setq read-file-name-completion-ignore-case t)
 
-
 (when (require 'auto-complete-config nil t)
   (setq ac-use-menu-map t);; C-n/C-pで候補選択可能
   (setq ac-dwim t) ;; 空気を読む
