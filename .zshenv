@@ -60,3 +60,6 @@ export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
 # MAMP mysql用
 alias mmysql="/Applications/MAMP/Library/bin/mysql"
 alias mmysqldump="/Applications/MAMP/Library/bin/mysqldump"
+
+# Appium用
+export PATH=$PATH:/usr/local/share/npm/bin
