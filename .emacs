@@ -136,10 +136,10 @@
 ;(require 'ac-anything)
 ;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
 ;; 最新
-;(require 'anything)
-;(add-to-list 'load-path "~/.emacs.d/anything-config/")
-;(require 'anything-config)
-;(add-to-list 'anything-sources 'anything-c-source-emacs-commands)
+;; (require 'anything)
+;; (add-to-list 'load-path "~/.emacs.d/anything-config/")
+;; (require 'anything-config)
+;; (add-to-list 'anything-sources 'anything-c-source-emacs-commands)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        補完          ;;
