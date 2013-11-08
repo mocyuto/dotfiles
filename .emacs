@@ -155,7 +155,6 @@
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
-
 ;;; ベースとなるソースを指定
 ;; (defvar my-ac-sources
 ;;               '(ac-source-yasnippet
