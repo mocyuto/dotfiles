@@ -163,9 +163,9 @@
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
 ;;(setq read-file-name-completion-ignore-case t)
 
-;;(setq ac-use-menu-map t);; C-n/C-pで候補選択可能
-;;(setq ac-dwim t) ;; 空気を読む
-;;(setq ac-auto-start 2) ;;補完が自動で起動
+(setq ac-use-menu-map t);; C-n/C-pで候補選択可能
+(setq ac-dwim t) ;; 空気を読む
+(setq ac-auto-start 2) ;;補完が自動で起動
 ;;(setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
 ;;(setq ac-comphist-file "~/.emacs.d/elisp/auto-complete/ac-comphist.dat") ;; 補完履歴のキャッシュ先
 
@@ -328,6 +328,17 @@
 ;;           '(lambda ()
 ;;              (set (make-local-variable 'ac-sources)
 ;;                   (append ac-sources '(ac-source-pysmell)))))
+
+;;;;;;;;;;;;;;;;;
+;;     lua     ;;
+;;;;;;;;;;;;;;;;;
+;;;; This snippet enables lua-mode
+;; This line is not necessary, if lua-mode.el is already on your load-path
+(add-to-list 'load-path "~/.emacs.d/lua-mode")
+
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 ;;;;;;;;;;;;;;;;;;
 ;;     Java     ;;
