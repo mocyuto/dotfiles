@@ -136,42 +136,39 @@
 ;(require 'ac-anything)
 ;(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
 ;; 最新
-;; (require 'anything)
-;; (add-to-list 'load-path "~/.emacs.d/anything-config/")
-;; (require 'anything-config)
-;; (add-to-list 'anything-sources 'anything-c-source-emacs-commands)
+;(require 'anything)
+;(add-to-list 'load-path "~/.emacs.d/anything-config/")
+;(require 'anything-config)
+;(add-to-list 'anything-sources 'anything-c-source-emacs-commands)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        補完          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; パスを通す
-(defvar ac-dir (expand-file-name "~/.emacs.d/auto-complete"))
-(add-to-list 'load-path ac-dir)
-(add-to-list 'load-path (concat ac-dir "/lib/ert"))
-(add-to-list 'load-path (concat ac-dir "/lib/fuzzy"))
-(add-to-list 'load-path (concat ac-dir "/lib/popup"))
+;;(defvar ac-dir (expand-file-name "~/.emacs.d/auto-complete"))
+;;(add-to-list 'load-path ac-dir)
 
 (require 'auto-complete)
+(require 'auto-complete-config)
 (global-auto-complete-mode t)
 
 ;;; ベースとなるソースを指定
-;; (defvar my-ac-sources
-;;               '(ac-source-yasnippet
-;;                 ac-source-abbrev
-;;                 ac-source-dictionary
-;;                 ac-source-words-in-same-mode-buffers))
+;; 情報源として
+;; * ac-source-filename
+;; * ac-source-words-in-same-mode-buffers
+;; を利用
+;;(setq-default ac-sources '(ac-source-filename ac-source-words-in-same-mode-buffers ac-source-yasnippet))
 
 ;;find-fileのファイル名補完で大文字小文字を区別しない設定
-(setq read-file-name-completion-ignore-case t)
+;;(setq read-file-name-completion-ignore-case t)
 
-(when (require 'auto-complete-config nil t)
-  (setq ac-use-menu-map t);; C-n/C-pで候補選択可能
-  (setq ac-dwim t) ;; 空気を読む
-  (setq ac-auto-start 2) ;;補完が自動で起動するのを停止
-  (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
-  (setq ac-comphist-file "~/.emacs.d/elisp/auto-complete/ac-comphist.dat") ;; 補完履歴のキャッシュ先
-)
+;;(setq ac-use-menu-map t);; C-n/C-pで候補選択可能
+;;(setq ac-dwim t) ;; 空気を読む
+;;(setq ac-auto-start 2) ;;補完が自動で起動
+;;(setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
+;;(setq ac-comphist-file "~/.emacs.d/elisp/auto-complete/ac-comphist.dat") ;; 補完履歴のキャッシュ先
+
 ;; 補完辞書の参照をデフォルト設定に
 (ac-config-default)
 
@@ -184,13 +181,12 @@
 (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 (setq skeleton-pair 1)
 
-
 ;; 適用するメジャーモードを足す
-(setq ac-modes
-      (append ac-modes
-              '(perl-mode cperl-mode html-mode sql-mode vbnet-mode
-                          css-mode actionscript-mode web-mode
-                          js2-mode )))
+;;(setq ac-modes
+;;      (append ac-modes
+;;              '(perl-mode cperl-mode html-mode sql-mode vbnet-mode
+;;                          css-mode actionscript-mode web-mode
+;;                          js2-mode )))
 ;; (add-to-list 'ac-modes '(web-mode) t)
 ;; (add-to-list 'ac-modes '(scss-mode) t)
 ;; (add-to-list 'ac-modes '(html-mode) )
@@ -224,7 +220,7 @@
    major-mode
    '(
      ("\t" 0 my-face-b-2 append)
-     ("　" 0 my-face-b-2 append)
+     ("＿" 0 my-face-b-2 append)
      ("[ \t]+$" 0 my-face-u-1 append)
      (" [\r]*\n" 0 my-face-r-1 append)
      )))
