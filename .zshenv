@@ -63,3 +63,7 @@ alias mmysqldump="/Applications/MAMP/Library/bin/mysqldump"
 
 # Appium用
 export PATH=$PATH:/usr/local/share/npm/bin
+
+# Android用
+export ANDROID_SDK=$HOME/android-sdks
+alias android=$ANDROID_SDK/tools/android
