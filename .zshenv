@@ -13,7 +13,7 @@ alias gnuplot='/Applications/gnuplot.app/gnuplot'
 export GNUTERM=X11
 
 # Homebrew用PATH指定
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/local/share/python:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/local/share/python:$PATH:/usr/local/Cellar/:
 
 # TeXLive用PATH指定
 export PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
@@ -49,10 +49,10 @@ export PATH=$PATH:$HOME/perl5/perlbrew/bin/
 alias js="java -cp ~/Library/rhino1_7R4/js.jar org.mozilla.javascript.tools.shell.Main"
 
 # virtualenv用
-export PATH=$PATH:/opt/local/bin
-source /usr/local/share/python/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/.virtualenvs
-export PIP_RESPECT_VIRTUALENV=true
+#export PATH=$PATH:/opt/local/bin
+#source /usr/local/share/python/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PIP_RESPECT_VIRTUALENV=true
 
 # androidSDK for Mac 用のPATH設定
 export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
@@ -67,3 +67,7 @@ export PATH=$PATH:/usr/local/share/npm/bin
 # Android用
 export ANDROID_SDK=$HOME/android-sdks
 alias android=$ANDROID_SDK/tools/android
+alias adb=$ANDROID_SDK/platform-tools/adb
+
+#ant用
+export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin

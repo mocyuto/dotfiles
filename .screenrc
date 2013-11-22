@@ -31,7 +31,7 @@ encoding utf-8 utf-8
 # キーバインド
 #################################################
 # <C-s> 新規ウィンドウでssh開始
-bind s colon 'screen ssh '
+#bind s colon 'screen ssh '
 # <C-k> kill 現在のウィンドウ破棄
 bind k
 bind ^k
