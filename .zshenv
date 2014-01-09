@@ -56,6 +56,7 @@ alias js="java -cp ~/Library/rhino1_7R4/js.jar org.mozilla.javascript.tools.shel
 
 # androidSDK for Mac 用のPATH設定
 export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
+ANDRIOD_HOME=$HOME/android-sdks
 
 # MAMP mysql用
 alias mmysql="/Applications/MAMP/Library/bin/mysql"
