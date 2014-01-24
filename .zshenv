@@ -66,7 +66,7 @@ alias mmysqldump="/Applications/MAMP/Library/bin/mysqldump"
 export PATH=$PATH:/usr/local/share/npm/bin
 
 # Android用
-export ANDROID_SDK=$HOME/android-sdks
+export ANDROID_HOME=$HOME/android-sdks
 alias android=$ANDROID_SDK/tools/android
 alias adb=$ANDROID_SDK/platform-tools/adb
 
