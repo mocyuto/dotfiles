@@ -55,6 +55,9 @@
 ;; タブをスペース4つにする
 (setq-default tab-width 4 indent-tabs-mode nil)
 
+;; コメント関係
+(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
+(setq comment-style 'multi-line)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;        表示          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
