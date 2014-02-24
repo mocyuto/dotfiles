@@ -19,6 +19,7 @@
 (setq hl-line-face 'underline) ; 下線
 
 ;; auto-complete
+;; emacs上でload-file必須
 (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
 (require 'auto-complete-config)
 (ac-config-default)
@@ -90,3 +91,10 @@
        ad-do-it)))
 (do-not-exit-view-mode-unless-writable-advice view-mode-exit)
 (do-not-exit-view-mode-unless-writable-advice view-mode-disable)
+
+;;;;;;;;;;
+;; helm ;;
+;;;;;;;;;;
+(add-to-list 'load-path "~/Github/helm")
+(require 'helm-config)
+(helm-mode 1)

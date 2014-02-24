@@ -70,7 +70,7 @@ setopt noautoremoveslash
 
 # no beep sound when complete list displayed
 #
-setopt nolistbeep
+setopt no_beep
 
 #補完候補リストの日本語を正しく表示
 setopt print_eight_bit
