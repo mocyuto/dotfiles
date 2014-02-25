@@ -15,6 +15,9 @@
 (setq scroll-step 1)
 ;; 対応する括弧をハイライト
 (show-paren-mode t)
+;; beep音を点滅に
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)
 
 (setq hl-line-face 'underline) ; 下線
 
