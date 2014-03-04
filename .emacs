@@ -26,6 +26,7 @@
 (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
 (require 'auto-complete-config)
 (ac-config-default)
+(setq ac-use-menu-map t)
 
 ;;括弧の補完
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
