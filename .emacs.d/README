@@ -1,0 +1,7 @@
+インストールするもの
+auto-complete
+$ cd .emacs.d/
+$ make install
+もしくは
+M-x load-file RET
+auto-complete/etc/install.el
