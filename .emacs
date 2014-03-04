@@ -18,10 +18,13 @@
 ;; beep音を点滅に
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
+;; 下線
+(setq hl-line-face 'underline) 
 
-(setq hl-line-face 'underline) ; 下線
+;;;;;;;;;;;;;;;;;;;
+;; auto-complete ;;
+;;;;;;;;;;;;;;;;;;;
 
-;; auto-complete
 ;; emacs上でload-file必須
 (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
 (require 'auto-complete-config)
@@ -38,6 +41,7 @@
 ;; コメントアウトショートカット
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 (setq comment-style 'multi-line)
+
 ;;;;;;;;;;;;;;;;
 ;; view mode  ;;
 ;;;;;;;;;;;;;;;;
@@ -102,3 +106,7 @@
 (add-to-list 'load-path "~/Github/helm")
 (require 'helm-config)
 (helm-mode 1)
+;; For find-file etc.
+(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+;; For helm-find-files etc.
+(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
