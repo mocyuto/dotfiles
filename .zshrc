@@ -44,6 +44,7 @@ setopt transient_rprompt
 
 # auto change directory
 setopt auto_cd
+function chpwd() { ls }
 
 # auto directory pushd that you can get dirs list by cd -[tab]
 setopt auto_pushd
@@ -70,7 +71,7 @@ setopt noautoremoveslash
 
 # no beep sound when complete list displayed
 #
-setopt no_beep
+setopt nolistbeep
 
 #補完候補リストの日本語を正しく表示
 setopt print_eight_bit
