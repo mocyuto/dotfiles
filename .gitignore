@@ -1,1 +1,5 @@
 .emacs.d/auto-save-list
+.emacs.d/ac-comphist.dat
+*.elc
+
+.DS_Store

@@ -72,3 +72,6 @@ alias adb=$ANDROID_SDK/platform-tools/adb
 
 #ant用
 export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin
+
+# haskell用
+export PATH=$PATH:/Library/Haskell/bin
