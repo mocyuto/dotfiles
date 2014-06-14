@@ -1,6 +1,9 @@
 dotfiles
 ========
 
+![Build Status](https://travis-ci.org/moc-yuto/dotfiles.svg?branch=master)
+
+
 This is my preference files.
 These are almost dotfiles.
 
