@@ -112,5 +112,14 @@
 (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 
 
+;;;;;;;;;;;;
+; language ;
+;;;;;;;;;;;;
+
+;; haskell-mode
+(add-to-list 'load-path "~/GitHub/haskell-mode/")
+(require 'haskell-mode-autoloads)
+(add-to-list 'Info-default-directory-list "~/GitHub/haskell-mode/")
+
 ;; php-mode
 (require 'php-mode)
