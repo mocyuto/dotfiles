@@ -20,3 +20,10 @@ make
 (add-to-list 'load-path "~/Github/helm")
 (require 'helm-config)
 ```
+
+#haskell-mode
+```
+git clone https://github.com/haskell/haskell-mode.git ~/Github/haskell-mode
+cd ~/Github/haskell-mode
+make all
+```
