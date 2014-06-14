@@ -25,9 +25,9 @@
 ;; auto-complete ;;
 ;;;;;;;;;;;;;;;;;;;
 
+(require 'auto-complete-config)
 ;; emacs上でload-file必須
 (setq ac-dictionary-directories "~/.emacs.d/elisp/auto-complete/ac-dict") ;; 辞書ファイルのディレクトリ
-(require 'auto-complete-config)
 (ac-config-default)
 (setq ac-use-menu-map t)
 
@@ -110,3 +110,7 @@
 (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 ;; For helm-find-files etc.
 (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+
+
+;; php-mode
+(require 'php-mode)
