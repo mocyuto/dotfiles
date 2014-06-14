@@ -16,7 +16,7 @@ M-x load-file auto-complete/etc/install.el
 ```
 git clone https://github.com/emacs-helm/helm.git ~/Github/helm
 make
-add .emacs
+# add .emacs
 (add-to-list 'load-path "~/Github/helm")
 (require 'helm-config)
 ```
