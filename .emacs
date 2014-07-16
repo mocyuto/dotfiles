@@ -130,5 +130,5 @@
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 ;; scala-mode2
-(add-to-list 'load-path "~GitHub/scala-mode2/")
+(add-to-list 'load-path "~/GitHub/scala-mode2/")
 (require 'scala-mode2)
