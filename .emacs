@@ -138,3 +138,9 @@
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 (add-to-list 'ac-modes 'lua-mode)
+
+;; scala-mode2
+(add-to-list 'load-path "~/GitHub/scala-mode2/")
+(require 'scala-mode2)
+(add-to-list 'ac-mode 'scala-mode2)
+

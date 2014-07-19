@@ -30,3 +30,8 @@ git clone https://github.com/haskell/haskell-mode.git ~/Github/haskell-mode
 cd ~/Github/haskell-mode
 make all
 ```
+
+#scala-mode
+```
+git clone git://github.com/hvesalai/scala-mode2.git
+```
