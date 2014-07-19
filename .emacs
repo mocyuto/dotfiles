@@ -142,5 +142,5 @@
 ;; scala-mode2
 (add-to-list 'load-path "~/GitHub/scala-mode2/")
 (require 'scala-mode2)
-(add-to-list 'ac-mode 'scala-mode2)
+(add-to-list 'ac-modes 'scala-mode2)
 
