@@ -120,15 +120,27 @@
 (add-to-list 'load-path "~/GitHub/haskell-mode/")
 (require 'haskell-mode-autoloads)
 (add-to-list 'Info-default-directory-list "~/GitHub/haskell-mode/")
+(add-to-list 'ac-modes 'haskell-mode)
 
 ;; php-mode
 (require 'php-mode)
+(add-hook 'php-mode-hook
+	  '(lambda()
+	     (setq tab-width 4)
+	     (setq indent-tabs-mode t)
+	     (setq c-basic-offset 4)
+	     )
+	  )
+(add-to-list 'ac-modes 'php-mode)
 
 ;; lua-mode
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+(add-to-list 'ac-modes 'lua-mode)
 
 ;; scala-mode2
 (add-to-list 'load-path "~/GitHub/scala-mode2/")
 (require 'scala-mode2)
+(add-to-list 'ac-modes 'scala-mode2)
+

@@ -75,3 +75,6 @@ export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin
 
 # haskell用
 export PATH=$PATH:/Library/Haskell/bin
+
+#php用
+export PATH=/usr/local/php5/bin:$PATH
