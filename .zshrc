@@ -82,7 +82,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[.]=*'
 # 補完候補を ←↓↑選択 (候補が色分け表示される)
 zstyle ':completion:*:default' menu select=1
 # completions get colors
-zstyle ':completion:*' list-colors di=34 fi=0
+zstyle ':completion:*' list-colors di=35 fi=0
 # カレントディレクトリに候補がない場合のみ cdpath 上のディレクトリを候補
 zstyle ':completion:*:cd:*' tag-order local-directories path-directories
 # 特定のファイルは補完対象から除外する
