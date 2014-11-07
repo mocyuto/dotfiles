@@ -13,7 +13,34 @@
 (setq linum-format "%4d ")
 ;;画面のスクロールの移動量を１にする
 (setq scroll-step 1)
-;; 対応する括弧をハイライト
+
+;;regionがactiveなときBackspaceでそれを削除
+(defadvice backward-delete-char-untabify
+  (around ys:backward-delete-region activate)
+  (if (and transient-mark-mode mark-active)
+      (delete-region (region-beginning) (region-end))
+    ad-do-it))
+
+;; 下まで行ったら折り返し
+(setq windmove-wrap-around t)
+;; ウィンドウ間をShift+矢印キーで移動
+;; C-M-{h,j,k,l}でウィンドウ間を移動
+(define-key global-map (kbd "C-M-k") 'windmove-up)
+(define-key global-map (kbd "C-M-j") 'windmove-down)
+(define-key global-map (kbd "C-M-l") 'windmove-right)
+(define-key global-map (kbd "C-M-h") 'windmove-left)
+
+;; タブをスペース4つにする
+(setq-default tab-width 4 indent-tabs-mode nil)
+
+;; コメント関係
+(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
+(setq comment-style 'multi-line)
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;        表示          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;対応する括弧をハイライト表示させる設定
 (show-paren-mode t)
 ;; beep音を点滅に
 (setq visible-bell t)
