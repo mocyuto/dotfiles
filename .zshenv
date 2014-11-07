@@ -67,8 +67,10 @@ export PATH=$PATH:/usr/local/share/npm/bin
 
 # Android用
 export ANDROID_HOME=$HOME/android-sdks
+export ANDROID_SDK=/Applications/adt-bundle-mac-x86_64-20140702/sdk/
 alias android=$ANDROID_SDK/tools/android
 alias adb=$ANDROID_SDK/platform-tools/adb
+export NDK_ROOT=/Applications/adt-bundle-mac-x86_64-20140702/ndk/android-ndk-r10/
 
 #ant用
 export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin
