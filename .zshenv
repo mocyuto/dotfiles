@@ -34,12 +34,12 @@ alias java="java -Dfile.encoding=UTF-8"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export NODEBREW_ROOT=$HOME/.nodebrew
 
-# PYTHON用設定（pythonbrewを使用）
-export PATH=/usr/local/bin:/usr/local/share/python:$PATH:/Applications/eclipse/android-sdk-mac_x86/tools
-#export PYTHONPATH=$HOME/.pythonbrew/current:$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
-#export WORKON_HOME=$HOME/.virtualenvs
+# PYTHON用設定（pyenvを使用）
+export PYENV_ROOT=${HOME}/.pyenv
+export PATH=${PYENV_ROOT}/bin:$PATH
+eval "$(pyenv init -)"
 
-# perlbrew用環境設定
+#perlbrew用環境設定
 export PATH=$PATH:$HOME/perl5/perlbrew/bin/
 
 # emacs用のPATH設定
@@ -47,12 +47,6 @@ export PATH=$PATH:$HOME/perl5/perlbrew/bin/
 
 # javascript用のPATH
 alias js="java -cp ~/Library/rhino1_7R4/js.jar org.mozilla.javascript.tools.shell.Main"
-
-# virtualenv用
-#export PATH=$PATH:/opt/local/bin
-#source /usr/local/share/python/virtualenvwrapper.sh
-#export WORKON_HOME=$HOME/.virtualenvs
-#export PIP_RESPECT_VIRTUALENV=true
 
 # androidSDK for Mac 用のPATH設定
 export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
