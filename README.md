@@ -7,13 +7,19 @@ dotfiles
 This is my preference files.
 These are almost dotfiles.
 
+setting about pyenv
+-------
+```
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+```
+
  about emacs on .zshenv
 --------
 please install emacs-24.3 or later, or comment-region about yasnnipet
 
 # auto-complete
-download auto-complete
-M-x load-file auto-complete/etc/install.el
+download auto-complete  
+`M-x load-file auto-complete/etc/install.el`
 
 # helm
 ```
