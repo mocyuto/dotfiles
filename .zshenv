@@ -13,7 +13,7 @@ alias gnuplot='/Applications/gnuplot.app/gnuplot'
 export GNUTERM=X11
 
 # Homebrew用PATH指定
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/local/share/python:$PATH:/usr/local/Cellar/:
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/local/share/python:$PATH
 
 # TeXLive用PATH指定
 export PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
@@ -27,8 +27,6 @@ export PATH=$HOME/.phpenv/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 # JAVA用PATH指定
 # export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 export JAVA_HOME=/Library/Java/Home
-alias javac="javac -J-Dfile.encoding=UTF-8"
-alias java="java -Dfile.encoding=UTF-8"
 
 # NODEBREW用PATH指定
 export PATH=$HOME/.nodebrew/current/bin:$PATH
