@@ -6,7 +6,7 @@ export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30
 
 # lessカラー設定
 export LESS=' -R'
-export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.7/bin/src-hilite-lesspipe.sh %s"
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 
 # gnuplot等のグラフ出力先をX11に指定
 alias gnuplot='/Applications/gnuplot.app/gnuplot'
