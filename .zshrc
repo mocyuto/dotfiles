@@ -167,13 +167,6 @@ alias su="su -l"
 alias sl="ls"
 #alias ls="ls --color=auto --hide='*.pyc'"
 
-
-export PYENV_ROOT="${HOME}/.pyenv"
-if [  -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
-    eval "$(pyenv init -)"
-fi
-
 ## load user .zshrc configuration file
 #
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
