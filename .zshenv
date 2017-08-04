@@ -21,8 +21,13 @@ export PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
 # Cabal(Haskell)用設定
 export PATH=$PATH:$HOME/.cabal/bin
 
-# rbenv,phpenv用設定
-export PATH=$HOME/.phpenv/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
+# phpenv用設定
+export PATH=$HOME/.phpenv/bin:$PATH
+
+# rbenv用設定
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
 
 # JAVA用PATH指定(jenv使用)
 ## 
@@ -36,8 +41,11 @@ export NODEBREW_ROOT=$HOME/.nodebrew
 
 # PYTHON用設定（pyenvを使用）
 export PYENV_ROOT=${HOME}/.pyenv
-export PATH=${PYENV_ROOT}/bin:$PATH
-eval "$(pyenv init -)"
+export PYENV_ROOT="${HOME}/.pyenv"
+if [  -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
 
 #perlbrew用環境設定
 export PATH=$PATH:$HOME/perl5/perlbrew/bin/
