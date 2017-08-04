@@ -24,9 +24,11 @@ export PATH=$PATH:$HOME/.cabal/bin
 # rbenv,phpenv用設定
 export PATH=$HOME/.phpenv/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 
-# JAVA用PATH指定
-# export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/Home
+# JAVA用PATH指定(jenv使用)
+## 
+## $brew install jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # NODEBREW用PATH指定
 export PATH=$HOME/.nodebrew/current/bin:$PATH
