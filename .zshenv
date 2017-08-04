@@ -32,8 +32,10 @@ export PATH=$HOME/.phpenv/bin:$PATH
 # JAVA用PATH指定(jenv使用)
 ## 
 ## $brew install jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+if [ -d ~/.jenv ]; then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+fi
 
 # NODEBREW用PATH指定
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -41,7 +43,6 @@ export NODEBREW_ROOT=$HOME/.nodebrew
 
 # PYTHON用設定（pyenvを使用）
 export PYENV_ROOT=${HOME}/.pyenv
-export PYENV_ROOT="${HOME}/.pyenv"
 if [  -d "${PYENV_ROOT}" ]; then
     export PATH=${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)"
