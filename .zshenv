@@ -83,3 +83,6 @@ export PATH=$PATH:/Library/Haskell/bin
 
 #php用
 export PATH=/usr/local/php5/bin:$PATH
+
+# Go
+export GOPATH=$HOME/.go
