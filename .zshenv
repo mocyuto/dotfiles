@@ -85,4 +85,10 @@ export PATH=$PATH:/Library/Haskell/bin
 export PATH=/usr/local/php5/bin:$PATH
 
 # Go
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/go
+
+# goenv
+if [ -d ~/.goenv ]; then
+    export PATH="$HOME/.goenv/bin:$PATH"
+    eval "$(goenv init -)"
+fi
