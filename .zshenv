@@ -86,3 +86,6 @@ export PATH=/usr/local/php5/bin:$PATH
 
 # Go
 export GOPATH=$HOME/.go
+
+# Rust用
+export PATH="$HOME/.cargo/bin:$PATH"
