@@ -40,7 +40,14 @@ RPROMPT="%T"
 # 右側まで入力がきたら時間を消す""
 setopt transient_rprompt
 
+##############################
 ########### 補完 #############
+##############################
+
+## Completion configuration
+fpath=(~/.zsh/functions/Completion ${fpath})
+autoload -U compinit
+compinit
 
 # auto change directory
 setopt auto_cd
@@ -88,6 +95,9 @@ zstyle ':completion:*:cd:*' tag-order local-directories path-directories
 # 特定のファイルは補完対象から除外する
 zstyle ':completion:*' ignored-patterns '*.pyc'
 
+# kubectl completion
+(( $+commands[kubectl] )) && source <(kubectl completion zsh)
+
 #############################
 
 ## Keybind configuration
@@ -116,13 +126,6 @@ SAVEHIST=10000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 setopt append_history       # 履歴を追加（毎回.zsh_historyを作らない）
-
-## Completion configuration
-#
-fpath=(~/.zsh/functions/Completion ${fpath})
-autoload -U compinit
-compinit
-
 setopt rm_star_wait         #rm * を実行する前に確認する
 
 ## Prediction configuration
