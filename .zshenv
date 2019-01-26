@@ -89,7 +89,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Go
 export GOPATH=$HOME/go
-
+export PATH=$PATH:$GOPATH/bin
 # goenv
 if [ -d ~/.goenv ]; then
     export PATH="$HOME/.goenv/bin:$PATH"
