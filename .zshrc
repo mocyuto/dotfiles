@@ -98,8 +98,9 @@ zstyle ':completion:*:cd:*' tag-order local-directories path-directories
 # 特定のファイルは補完対象から除外する
 zstyle ':completion:*' ignored-patterns '*.pyc'
 
-# kubectl completion
+## kubectl completion
 (( $+commands[kubectl] )) && source <(kubectl completion zsh)
+complete -F __start_kubectl k
 
 #############################
 
@@ -145,7 +146,9 @@ REPORTTIME=3
 ## Alias configuration
 #
 # expand aliases before completing
-#
+#`
+#####################
+
 setopt complete_aliases     # aliased ls needs if file/dir completions work
 #setopt extendedglob
 
@@ -172,6 +175,9 @@ alias df="df -h"
 alias su="su -l"
 alias sl="ls"
 #alias ls="ls --color=auto --hide='*.pyc'"
+
+### kube
+alias k=kubectl
 
 ## load user .zshrc configuration file
 #
