@@ -178,6 +178,8 @@ alias sl="ls"
 
 ### kube
 alias k=kubectl
+### IntelliJ
+alias ij='open -b com.jetbrains.intellij'
 
 ## load user .zshrc configuration file
 #
