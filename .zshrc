@@ -14,7 +14,15 @@ export LANG=ja_JP.UTF-8
 # VCSの情報を取得するzshの便利関数 vcs_infoを使う
 autoload -Uz vcs_info
 
-# 表示フォーマットの指定
+## zplug setting
+#
+# loading zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+[ -s $ZPLUG_HOME/init.zsh ] &&  source $ZPLUG_HOME/init.zsh
+source ~/.zplugrc
+
+
+## 表示フォーマットの指定
 # %b ブランチ情報
 # %a アクション名(mergeなど)
 zstyle ':vcs_info:*' formats '[%b]'
@@ -32,12 +40,15 @@ precmd () {
 
 autoload colors
 colors
-PROMPT="
- %{${fg[green]}%}%B%/%b%{${reset_color}%} %1(v|%F{green}%1v%f|)
-[%n@%m]$ "
+# ディレクトリとGitを表示
+PROMPT1=" %{${fg[green]}%}%B%/%b%{${reset_color}%} %1(v|%F{green}%1v%f|)"
+PROMPT2="[%n@%m]$ "
 
-PROMPT2='[%n]> '
+# 右側にk8s context を表示する
+PROMPT_K8S='%{$fg[cyan]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
+PROMPT="$PROMPT1 $PROMPT_K8S
+$PROMPT2"
 # 右側に時間を表示する
 RPROMPT="%T"
 # 右側まで入力がきたら時間を消す""
