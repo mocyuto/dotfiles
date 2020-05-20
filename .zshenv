@@ -95,3 +95,7 @@ if [ -d ~/.goenv ]; then
     export PATH="$HOME/.goenv/bin:$PATH"
     eval "$(goenv init -)"
 fi
+
+# MySQL Client by brew
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+

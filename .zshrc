@@ -148,9 +148,6 @@ setopt rm_star_wait         #rm * を実行する前に確認する
 #autoload predict-on
 #predict-off
 
-## less,lvから起動するエディタ
-export VISUAL="emacsclient -a emacs"
-
 ## 実行時間が３秒以上の場合表示
 REPORTTIME=3
 
@@ -191,6 +188,9 @@ alias sl="ls"
 alias k=kubectl
 ### IntelliJ
 alias ij='open -b com.jetbrains.intellij'
+
+### terraform
+function tf(){ env `cat ~/.terraform` terraform $@}
 
 ## load user .zshrc configuration file
 #
