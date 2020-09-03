@@ -184,6 +184,8 @@ alias su="su -l"
 alias sl="ls"
 #alias ls="ls --color=auto --hide='*.pyc'"
 
+alias sed="gsed"
+
 ### kube
 alias k=kubectl
 ### IntelliJ

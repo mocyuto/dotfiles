@@ -16,13 +16,14 @@ export GNUTERM=X11
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/local/share/python:$PATH
 
 # TeXLive用PATH指定
-export PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
+# export PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
 
 # Cabal(Haskell)用設定
-export PATH=$PATH:$HOME/.cabal/bin
+# export PATH=$PATH:$HOME/.cabal/bin
+# export PATH=$PATH:/Library/Haskell/bin
 
 # phpenv用設定
-export PATH=$HOME/.phpenv/bin:$PATH
+# export PATH=$HOME/.phpenv/bin:$PATH
 
 # rbenv用設定
 [[ -d ~/.rbenv  ]] && \
@@ -49,10 +50,10 @@ if [  -d "${PYENV_ROOT}" ]; then
 fi
 
 #perlbrew用環境設定
-export PATH=$PATH:$HOME/perl5/perlbrew/bin/
+# export PATH=$PATH:$HOME/perl5/perlbrew/bin/
 
 # emacs用のPATH設定
-#alias emacs='emacs-24.3'
+# alias emacs='emacs-24.3'
 
 # javascript用のPATH
 alias js="java -cp ~/Library/rhino1_7R4/js.jar org.mozilla.javascript.tools.shell.Main"
@@ -77,9 +78,6 @@ export NDK_ROOT=/Applications/adt-bundle-mac-x86_64-20140702/ndk/android-ndk-r10
 
 #ant用
 export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin
-
-# haskell用
-export PATH=$PATH:/Library/Haskell/bin
 
 #php用
 export PATH=/usr/local/php5/bin:$PATH
