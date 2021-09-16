@@ -84,6 +84,7 @@ export PATH=/usr/local/php5/bin:$PATH
 
 # Rust用
 export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
 
 # Go
 export GOPATH=$HOME/go
@@ -96,4 +97,7 @@ fi
 
 # MySQL Client by brew
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+# for krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
