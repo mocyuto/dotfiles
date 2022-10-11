@@ -31,7 +31,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/local/share/pyt
   eval "$(rbenv init -)"
 
 # JAVA用PATH指定(jenv使用)
-## 
 ## $brew install jenv
 if [ -d ~/.jenv ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
@@ -49,6 +48,9 @@ if [  -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
 fi
 
+# poetryの設定
+export PATH="$HOME/.poetry/bin:$PATH"
+
 #perlbrew用環境設定
 # export PATH=$PATH:$HOME/perl5/perlbrew/bin/
 
@@ -58,19 +60,8 @@ fi
 # javascript用のPATH
 alias js="java -cp ~/Library/rhino1_7R4/js.jar org.mozilla.javascript.tools.shell.Main"
 
-# androidSDK for Mac 用のPATH設定
-export PATH=$PATH:/Applications/android-sdk-macosx/platform-tools
-ANDRIOD_HOME=$HOME/android-sdks
-
-# MAMP mysql用
-alias mmysql="/Applications/MAMP/Library/bin/mysql"
-alias mmysqldump="/Applications/MAMP/Library/bin/mysqldump"
-
-# Appium用
-export PATH=$PATH:/usr/local/share/npm/bin
-
-# Android用
-export ANDROID_HOME=$HOME/android-sdks
+# Android SDK for Mac 用のPATH設定
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export ANDROID_SDK=/Applications/adt-bundle-mac-x86_64-20140702/sdk/
 alias android=$ANDROID_SDK/tools/android
 alias adb=$ANDROID_SDK/platform-tools/adb

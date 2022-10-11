@@ -111,13 +111,13 @@ zstyle ':completion:*' ignored-patterns '*.pyc'
 
 ## kubectl completion
 (( $+commands[kubectl] )) && source <(kubectl completion zsh)
-complete -F __start_kubectl k
+compdef __start_kubectl k
 
 #############################
 
 ## Keybind configuration
 #
-# emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes 
+# emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
 #   to end of it)
 #
 bindkey -e
