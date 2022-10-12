@@ -110,8 +110,7 @@ zstyle ':completion:*:cd:*' tag-order local-directories path-directories
 zstyle ':completion:*' ignored-patterns '*.pyc'
 
 ## kubectl completion
-(( $+commands[kubectl] )) && source <(kubectl completion zsh)
-compdef __start_kubectl k
+source <(kubectl completion zsh)
 
 #############################
 
@@ -157,7 +156,7 @@ REPORTTIME=3
 #`
 #####################
 
-setopt complete_aliases     # aliased ls needs if file/dir completions work
+setopt completealiases     # aliased ls needs if file/dir completions work
 #setopt extendedglob
 
 alias where="command -v"
@@ -187,7 +186,8 @@ alias sl="ls"
 alias sed="gsed"
 
 ### kube
-alias k=kubectl
+alias k="kubectl"
+
 ### IntelliJ
 alias ij='open -b com.jetbrains.intellij'
 
@@ -197,4 +197,3 @@ function tf(){ env `cat ~/.terraform` terraform $@}
 ## load user .zshrc configuration file
 #
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
-[[  -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
