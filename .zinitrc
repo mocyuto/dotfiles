@@ -1,5 +1,12 @@
 zinit light "superbrothers/zsh-kubectl-prompt"
-zinit light "zsh-users/zsh-syntax-highlighting"
-zinit light "zsh-users/zsh-autosuggestions"
-zinit light "zsh-users/zsh-completions"
+
+# https://zdharma-continuum.github.io/zinit/wiki/Example-Minimal-Setup/
+zinit wait light-mode for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma-continuum/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions
+
 zinit light zdharma/history-search-multi-word
