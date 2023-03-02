@@ -92,3 +92,10 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 # for krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+. "$HOME/.cargo/env"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yuto.suzuki/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuto.suzuki/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yuto.suzuki/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuto.suzuki/google-cloud-sdk/completion.zsh.inc'; fi

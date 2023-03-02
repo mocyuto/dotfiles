@@ -51,9 +51,10 @@ setopt transient_rprompt
 ##############################
 
 ## Completion configuration
-fpath=(~/.zsh/functions/Completion ${fpath})
-autoload -U compinit
-compinit
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+autoload -Uz compinit && compinit
 
 # auto change directory
 setopt auto_cd
