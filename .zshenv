@@ -50,6 +50,7 @@ fi
 
 # poetryの設定
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 #perlbrew用環境設定
 # export PATH=$PATH:$HOME/perl5/perlbrew/bin/
@@ -92,10 +93,12 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 # for krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-. "$HOME/.cargo/env"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/yuto.suzuki/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuto.suzuki/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/yuto.suzuki/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuto.suzuki/google-cloud-sdk/completion.zsh.inc'; fi
+
+# aqua
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
