@@ -37,9 +37,11 @@ if [ -d ~/.jenv ]; then
     eval "$(jenv init -)"
 fi
 
-# NODEBREW用PATH指定
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export NODEBREW_ROOT=$HOME/.nodebrew
+# NVM用PATH指定
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # PYTHON用設定（pyenvを使用）
 export PYENV_ROOT=${HOME}/.pyenv
@@ -51,6 +53,9 @@ fi
 # poetryの設定
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# rye
+source "$HOME/.rye/env"
 
 #perlbrew用環境設定
 # export PATH=$PATH:$HOME/perl5/perlbrew/bin/
