@@ -37,12 +37,6 @@ if [ -d ~/.jenv ]; then
     eval "$(jenv init -)"
 fi
 
-# NVM用PATH指定
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
 # PYTHON用設定（pyenvを使用）
 export PYENV_ROOT=${HOME}/.pyenv
 if [  -d "${PYENV_ROOT}" ]; then

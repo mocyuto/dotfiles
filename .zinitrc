@@ -10,3 +10,4 @@ zinit wait light-mode for \
       zsh-users/zsh-completions
 
 zinit light zdharma/history-search-multi-word
+zinit light lukechilds/zsh-nvm
