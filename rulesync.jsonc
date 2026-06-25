@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "claudecode": ["rules", "subagents", "skills", "mcp", "permissions"],
+    "agentsskills": ["skills"],
+    "opencode": ["rules", "subagents", "mcp", "permissions"],
+  },
+  "outputRoots": ["."],
+  "delete": true,
+  "verbose": false,
+  "global": true,
+  "simulatedCommands": false,
+  "simulatedSubagents": false,
+  "modularMcp": false,
+  "sources": [
+    {
+      "source": "dyoshikawa/rulesync",
+      "targets": ["agentsskills", "claudecode"],
+    },
+    { "source": "mocyuto/zgt", "targets": ["agentsskills", "claudecode"] },
+  ],
+}

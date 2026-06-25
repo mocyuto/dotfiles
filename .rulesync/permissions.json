@@ -1,0 +1,14 @@
+{
+  "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/permissions-schema.json",
+  "permission": {
+    "bash": {
+      "docker volume *": "deny",
+      "git commit *": "ask",
+      "aws *": "deny",
+      "rm *": "ask"
+    },
+    "read": {
+      ".env": "deny"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "lockfileVersion": 1,
+  "sources": {
+    "dyoshikawa/rulesync": {
+      "requestedRef": "main",
+      "resolvedRef": "92bea7caf43626cb143865e09d15421c59e7b7cf",
+      "resolvedAt": "2026-06-25T09:41:17.390Z",
+      "skills": {
+        "rulesync": {
+          "integrity": "sha256-cd43b6d613c7c38a6600a557bfd3ede7f0b7e320ef6b19e299b5ca1e0bee0db5"
+        }
+      }
+    },
+    "mocyuto/zgt": {
+      "requestedRef": "main",
+      "resolvedRef": "7b0d38161b7c3b0408155d79dafc42489a8fd4cd",
+      "resolvedAt": "2026-06-25T09:41:18.996Z",
+      "skills": {
+        "zgt-usage": {
+          "integrity": "sha256-7315c68305cb548f48ba4d89bce95d57e779182ef22cf3f5bd8a6047f8cd23e1"
+        }
+      }
+    }
+  }
+}
