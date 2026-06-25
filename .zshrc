@@ -211,8 +211,5 @@ zinit light-mode for \
 source ~/.zinitrc
 ### End of Zinit's installer chunk
 
-### NVM setting
-export NVM_DIR="$HOME/.nvm"
-export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=true
 
+fpath+=~/.zfunc; autoload -Uz compinit; compinit

@@ -4,26 +4,12 @@ export LANG=ja_JP.UTF-8
 export LSCOLORS=ExFxCxdxBxegedabagacad
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
-# lessカラー設定
-export LESS=' -R'
-export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
-
-# gnuplot等のグラフ出力先をX11に指定
-alias gnuplot='/Applications/gnuplot.app/gnuplot'
-export GNUTERM=X11
 
 # Homebrew用PATH指定
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/local/share/python:$PATH
+[ -s "/opt/homebrew/bin/brew" ] && \
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# TeXLive用PATH指定
-# export PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
-
-# Cabal(Haskell)用設定
-# export PATH=$PATH:$HOME/.cabal/bin
-# export PATH=$PATH:/Library/Haskell/bin
-
-# phpenv用設定
-# export PATH=$HOME/.phpenv/bin:$PATH
 
 # rbenv用設定
 [[ -d ~/.rbenv  ]] && \
@@ -48,11 +34,27 @@ fi
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# rye
-source "$HOME/.rye/env"
+### NVM setting
+export NVM_DIR="$HOME/.nvm"
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=true
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#perlbrew用環境設定
-# export PATH=$PATH:$HOME/perl5/perlbrew/bin/
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# mise
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 # emacs用のPATH設定
 # alias emacs='emacs-24.3'
@@ -65,13 +67,10 @@ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export ANDROID_SDK=/Applications/adt-bundle-mac-x86_64-20140702/sdk/
 alias android=$ANDROID_SDK/tools/android
 alias adb=$ANDROID_SDK/platform-tools/adb
-export NDK_ROOT=/Applications/adt-bundle-mac-x86_64-20140702/ndk/android-ndk-r10/
 
 #ant用
 export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin
 
-#php用
-export PATH=/usr/local/php5/bin:$PATH
 
 # Rust用
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -93,11 +92,12 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yuto.suzuki/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuto.suzuki/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/yuto.suzuki/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuto.suzuki/google-cloud-sdk/completion.zsh.inc'; fi
-
 # aqua
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/Documents/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Documents/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/Documents/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Documents/google-cloud-sdk/completion.zsh.inc"; fi
