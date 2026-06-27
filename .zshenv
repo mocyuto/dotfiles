@@ -74,7 +74,7 @@ export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin
 
 # Rust用
 export PATH="$HOME/.cargo/bin:$PATH"
-source "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # Go
 export GOPATH=$HOME/go
