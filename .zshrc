@@ -184,6 +184,8 @@ alias k="kubectl"
 ### IntelliJ
 alias ij='open -b com.jetbrains.intellij'
 
+alias devpodn="devpod --ide none --dotfiles https://github.com/mocyuto/dotfiles"
+
 ## eval direnv
 (( $+commands[direnv] )) && eval "$(direnv hook zsh)"
 
