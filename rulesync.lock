@@ -3,8 +3,8 @@
   "sources": {
     "dyoshikawa/rulesync": {
       "requestedRef": "main",
-      "resolvedRef": "92bea7caf43626cb143865e09d15421c59e7b7cf",
-      "resolvedAt": "2026-06-25T09:41:17.390Z",
+      "resolvedRef": "7315ece744e14e2fbe933d1a6cb50202c8fb8032",
+      "resolvedAt": "2026-06-27T10:37:04.947Z",
       "skills": {
         "rulesync": {
           "integrity": "sha256-cd43b6d613c7c38a6600a557bfd3ede7f0b7e320ef6b19e299b5ca1e0bee0db5"
@@ -13,11 +13,11 @@
     },
     "mocyuto/zgt": {
       "requestedRef": "main",
-      "resolvedRef": "7b0d38161b7c3b0408155d79dafc42489a8fd4cd",
-      "resolvedAt": "2026-06-25T09:41:18.996Z",
+      "resolvedRef": "9ead93a36ef021c5cee8744ff4df24a2c49b1bb9",
+      "resolvedAt": "2026-06-27T10:37:07.242Z",
       "skills": {
         "zgt-usage": {
-          "integrity": "sha256-7315c68305cb548f48ba4d89bce95d57e779182ef22cf3f5bd8a6047f8cd23e1"
+          "integrity": "sha256-1a7c3e774485cd0f48f397da90b739ddfd12ddfb576b4283f06344da79e7e963"
         }
       }
     }

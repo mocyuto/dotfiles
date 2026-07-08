@@ -5,6 +5,10 @@
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"],
       "env": {}
+    },
+    "aws-knowledge-mcp-server": {
+      "url": "https://knowledge-mcp.global.api.aws",
+      "type": "http"
     }
   }
 }
