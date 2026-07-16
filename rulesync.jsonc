@@ -17,5 +17,6 @@
       "targets": ["agentsskills", "claudecode"],
     },
     { "source": "mocyuto/zgt", "targets": ["agentsskills", "claudecode"] },
+    { "source": "googleworkspace/cli", "targets": ["agentsskills", "claudecode"] },
   ],
 }

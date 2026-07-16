@@ -4,3 +4,7 @@ minimum_release_age = "7d"
 [tools]
 node = "26"
 "npm:rulesync" = "latest"
+
+[tasks.skill_install]
+description = "skill install by rulesync"
+run = "GITHUB_TOKEN=$(gh auth token) rulesync install"

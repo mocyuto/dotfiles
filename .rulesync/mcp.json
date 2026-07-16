@@ -9,6 +9,10 @@
     "aws-knowledge-mcp-server": {
       "url": "https://knowledge-mcp.global.api.aws",
       "type": "http"
+    },
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2",
+      "type": "http"
     }
   }
 }

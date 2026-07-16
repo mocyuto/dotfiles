@@ -20,6 +20,298 @@
           "integrity": "sha256-1a7c3e774485cd0f48f397da90b739ddfd12ddfb576b4283f06344da79e7e963"
         }
       }
+    },
+    "googleworkspace/cli": {
+      "requestedRef": "main",
+      "resolvedRef": "a3768d0e82ad83cca2da97724e46bea4ff0e6dbd",
+      "resolvedAt": "2026-07-16T05:26:16.546Z",
+      "skills": {
+        "gws-admin-reports": {
+          "integrity": "sha256-6b0a8a59988d7ae8ba43848c1be5966401b726c7087d1b0605034b2b6919dd93"
+        },
+        "gws-calendar-agenda": {
+          "integrity": "sha256-e23f23eead96410d3aecf8919c76e68af6380ddb2a5e5ad50b6154b578bb54fa"
+        },
+        "gws-calendar-insert": {
+          "integrity": "sha256-807fc18b5832477b25809aa96ef6e97cfbd1d55f2e9e03d2dd3f0aaa3e49139e"
+        },
+        "gws-calendar": {
+          "integrity": "sha256-eda5000f5e3ea56b0f4a744b6c4b72669eb5def8e911d2a4df386e1a2ab6c7e5"
+        },
+        "gws-chat-send": {
+          "integrity": "sha256-1fa05e8dddbdc11f26e6bb55cc3398db6928ce7f673774faa47589e26c552168"
+        },
+        "gws-chat": {
+          "integrity": "sha256-00825879e99491542765e2af802d6e3c26e8bc355429fbaf26c57e4e1a0e2496"
+        },
+        "gws-classroom": {
+          "integrity": "sha256-90af15b7bae6520b4561323718f559774a430a17af8c7689af2cd92cc631b898"
+        },
+        "gws-docs-write": {
+          "integrity": "sha256-3791bc32375c19c896ea7021108cad3fabe3ca9fa1d78cd32a38e4d957b714d1"
+        },
+        "gws-docs": {
+          "integrity": "sha256-fc1d1a8bd55bfc6b7f592588199f52cff18955e04f9cbc3e2ee612b52fe147b2"
+        },
+        "gws-drive-upload": {
+          "integrity": "sha256-2f816853e23781263f1fd79ba79b4ec7b5db976ed5dcae1e9f55f5c2f64bbd10"
+        },
+        "gws-drive": {
+          "integrity": "sha256-6b860e7edc461e42e02ce05bb912cadb93a1f5692d50e127a09ac6025fc4bec2"
+        },
+        "gws-events-renew": {
+          "integrity": "sha256-6555e1a0f2b9690b54ce30b977f489b33216b5782c575997f37247df42f5b905"
+        },
+        "gws-events-subscribe": {
+          "integrity": "sha256-2faa3861d29c309b1e037f3e8f2980766ed99eca91a877c3be10f97b29f510f9"
+        },
+        "gws-events": {
+          "integrity": "sha256-567af25216e64734a4c1f6ca2fcbcfe70dc478189d89c5fbb43d1072836043b0"
+        },
+        "gws-forms": {
+          "integrity": "sha256-989ac06bd43d7cec035212bdb34d9281b89f84320f401e8394b7f7d404106110"
+        },
+        "gws-gmail-forward": {
+          "integrity": "sha256-c3cca62794140df2356622fb369cf75dd3d7a0e320202fbced022ffba1a738c6"
+        },
+        "gws-gmail-read": {
+          "integrity": "sha256-258c3e542c3ebdd50911c59f126610b8a0c8a44cc16a10b3c0433ca4c6a7a56a"
+        },
+        "gws-gmail-reply-all": {
+          "integrity": "sha256-d5e4953102c38515ab1ee58a1124fd32fed1436d1c6cc2979d52d9f0051085e2"
+        },
+        "gws-gmail-reply": {
+          "integrity": "sha256-b6d00739f14bb095c0453a9a79f5b85b22a77579984a46c782068372bda61b41"
+        },
+        "gws-gmail-send": {
+          "integrity": "sha256-2cd2af3dc3d82a73c15da4d36b23b6e24c562b68f48358ca5fecb664761a0374"
+        },
+        "gws-gmail-triage": {
+          "integrity": "sha256-bd168fa637c5186aaa88358952fed62c1d8de0cb455d7941b4c55132252f89bd"
+        },
+        "gws-gmail-watch": {
+          "integrity": "sha256-5e953db9b8087090e4f82aab5d987b93a462747bffa307a5aba54084d77e3f45"
+        },
+        "gws-gmail": {
+          "integrity": "sha256-23940a8c581fea6c0b080e0fcdc5280705ab48278eb6855af5beaef65b9b1d9b"
+        },
+        "gws-keep": {
+          "integrity": "sha256-6f1a7f0be52cff5831ed98bc1e1f0fbe598b5afdb41c188be5227f9cf98d54ac"
+        },
+        "gws-meet": {
+          "integrity": "sha256-21f1106142afb7e407da8b2c7853c03b5e40ae928ecd68113b09b852a80763b4"
+        },
+        "gws-modelarmor-create-template": {
+          "integrity": "sha256-c0ff61bdad30a86ddfd2bb22ee3b2fd3fbeca506fcc34483378044c0ac45fa61"
+        },
+        "gws-modelarmor-sanitize-prompt": {
+          "integrity": "sha256-9d32084670c1b8ca2ce128d8b113df041e3a476c97d502b84988c20cb3e34379"
+        },
+        "gws-modelarmor-sanitize-response": {
+          "integrity": "sha256-48b8d124be51e5015cc2b1b453e446ae8f6c45e31782426859c6bda4e38cb877"
+        },
+        "gws-modelarmor": {
+          "integrity": "sha256-8bf249e2a7c145478c1910975f5802a4a1741f7965dda55c53eebf259afce198"
+        },
+        "gws-people": {
+          "integrity": "sha256-ca35e0f681753676f7821bb4760d1342d1d372319bad1f03afdc0a6c219777d1"
+        },
+        "gws-script-push": {
+          "integrity": "sha256-d5a07d7f2bae35a9fc0a3bb92a99344e9376dd05de4bfe5ae06baa9efef8de7d"
+        },
+        "gws-script": {
+          "integrity": "sha256-7d0c87cb886ec160ac4f9d1433b69849d64610d40e92d886d373e437c8c98320"
+        },
+        "gws-shared": {
+          "integrity": "sha256-7dd8dacb7928cb9ebdf77d92f2921fd6f31e73fd6a746018ef8e54e33097a040"
+        },
+        "gws-sheets-append": {
+          "integrity": "sha256-9dd982eecdf6b7784df0a4cead586276a6641cd63c5be2d93f7abd0eda0a2c8d"
+        },
+        "gws-sheets-read": {
+          "integrity": "sha256-7064ae4bd8a2f68884f41756bf9055913fb652eac499b7808016ed96c819005a"
+        },
+        "gws-sheets": {
+          "integrity": "sha256-39c019ffadb4ad2e426d9ae4eb26b312d1102d0d8bf7eefc920b149bd5868496"
+        },
+        "gws-slides": {
+          "integrity": "sha256-6242cd2e6ebcdcad77041ba1bbaa6e9dcd1d65f38daa61b7ba96ed626dd409dc"
+        },
+        "gws-tasks": {
+          "integrity": "sha256-9c79ad35864f65ab799618810defc818b719124e102b853fe6c81ef517b6ba35"
+        },
+        "gws-workflow-email-to-task": {
+          "integrity": "sha256-ec54432d12a8060320363e2398031e095618e5ca58bb70fa1ffc049d31738bb6"
+        },
+        "gws-workflow-file-announce": {
+          "integrity": "sha256-e90f20e574ecff659bdfcd7c9de5f1eb96c25998dfa3f2b58f22c4336eab9285"
+        },
+        "gws-workflow-meeting-prep": {
+          "integrity": "sha256-f20a4ae62c7d022d342a1075feaf1c325c56ac80606e9237da03caa73e96bd67"
+        },
+        "gws-workflow-standup-report": {
+          "integrity": "sha256-c419612a4f53a6aebe65bfba70d431cebf21a4b8aa313c16a9df2b235d03cc29"
+        },
+        "gws-workflow-weekly-digest": {
+          "integrity": "sha256-7709cd27e5d2dbb0af8d1a0ada6c2637aad6d3d2693e3373f0fd146e59151f67"
+        },
+        "gws-workflow": {
+          "integrity": "sha256-dfabdcf5c80d72c2b32b2cfa107d98f9341be5159dc2c4e58a6b1cfabbbcb5e3"
+        },
+        "persona-content-creator": {
+          "integrity": "sha256-10b23072c6e0522a6864486647a8935213680d89c7c7d942ddaa3406579c64ce"
+        },
+        "persona-customer-support": {
+          "integrity": "sha256-9de0bcc145ffb0dbebd18f7a7670d2882d5e0daf0b7bf5f300e4881e8e27fc74"
+        },
+        "persona-event-coordinator": {
+          "integrity": "sha256-1826d6f6064a09b256e6366e7412db0cbb776d8a1f0177dc498fa0544a64c9c0"
+        },
+        "persona-exec-assistant": {
+          "integrity": "sha256-c5d9153819c74aef181c3a346731c35c257021d452c47f1715873c3b1da5eff2"
+        },
+        "persona-hr-coordinator": {
+          "integrity": "sha256-4cf905eda7ebcbe9ebe6c49502e68714f71c5c155b04fa491f5fb7b28f7f10e9"
+        },
+        "persona-it-admin": {
+          "integrity": "sha256-3beceb63fdd3f506e038c2441422d76225852a5dd9959217440a3bbcd6a2c15d"
+        },
+        "persona-project-manager": {
+          "integrity": "sha256-4c3a5a4cff582f196ccafa407a5450fb72d50405ba87d4f3a5e23183e49120f0"
+        },
+        "persona-researcher": {
+          "integrity": "sha256-6367da4f424a0dfdf62c7e410cd2de42e96122f884d0d27b4cb7311100fce405"
+        },
+        "persona-sales-ops": {
+          "integrity": "sha256-1fdf3463028ca76628a3322e00a8df9eca5073c0941095d73d149c21416c4e17"
+        },
+        "persona-team-lead": {
+          "integrity": "sha256-71c8c8070e48dac5ada1d69fb5b4fc87fc7a6f367b2f852eda8a5266198309c2"
+        },
+        "recipe-backup-sheet-as-csv": {
+          "integrity": "sha256-c41acebc1186c791584f04eb8f987f9b03e57e76978ddb5a8fc7e4fafe1659e3"
+        },
+        "recipe-batch-invite-to-event": {
+          "integrity": "sha256-8e6115ca36be37c3108a51615bf362b1f6efff7a1b6dae4acb4a142fc7f2a6c0"
+        },
+        "recipe-block-focus-time": {
+          "integrity": "sha256-d3e727dbedc7b071fe8a95b2b31d9c86f23c8484f6cf79ee426bacca577e8500"
+        },
+        "recipe-bulk-download-folder": {
+          "integrity": "sha256-2fb08395d8669b3f9c6beb1df6de1f564f818ecbb2a5e562a222c96d171e85da"
+        },
+        "recipe-collect-form-responses": {
+          "integrity": "sha256-4c658e7b91169c63b162e368cf074aff9b99e85a35ec00cfc93ac4d53166ed89"
+        },
+        "recipe-compare-sheet-tabs": {
+          "integrity": "sha256-7e673219b3bbe6aa30e3ae9d5e8cec344386af3474145ef398cd664f6e58b17e"
+        },
+        "recipe-copy-sheet-for-new-month": {
+          "integrity": "sha256-e53175391a2643008eeba5223a55e4428b25cb7e43db0957de57db993c061fe7"
+        },
+        "recipe-create-classroom-course": {
+          "integrity": "sha256-1ef6330b4eb3cef1b487d3d540a571c6046094dd0c3e58dc149f71cd3b62a57b"
+        },
+        "recipe-create-doc-from-template": {
+          "integrity": "sha256-422c5fe97d1e077c6a651bd35d5476f6f1b816e060fc48d2fcb702a399f1a4f8"
+        },
+        "recipe-create-events-from-sheet": {
+          "integrity": "sha256-a07feadec01fd0436f7d38653035fd90ffcaba64e44a4af2a401e68cea61a392"
+        },
+        "recipe-create-expense-tracker": {
+          "integrity": "sha256-262b4b5a5d8796df5b4d955bb1d9200e35188b709334a164011e2783acc13f03"
+        },
+        "recipe-create-feedback-form": {
+          "integrity": "sha256-791e48d64152bdc4c27b0fbc36e74339eb1307380b46b18e02102c4454437705"
+        },
+        "recipe-create-gmail-filter": {
+          "integrity": "sha256-9a02fcf8814129f9687d391f70eb4a563609db846a42c056998fcbd05d886436"
+        },
+        "recipe-create-meet-space": {
+          "integrity": "sha256-c10473aa43bae3d2c1f2ef04294a2f3c697bb012b82f95a4e60dd854decbef6b"
+        },
+        "recipe-create-presentation": {
+          "integrity": "sha256-f2344ac50e5c9fbad157e4ae68309b4852764540345646412968393f0ba95404"
+        },
+        "recipe-create-shared-drive": {
+          "integrity": "sha256-5e2fcd2c3eb15fe7cc35295d777486276f08a62b6e327d7080fb9c89e84c238a"
+        },
+        "recipe-create-task-list": {
+          "integrity": "sha256-270e3d78ac77778bed4f3fa8698f3aa23c874ced036b4ff1825e51f41533fcd7"
+        },
+        "recipe-create-vacation-responder": {
+          "integrity": "sha256-54956bbea03d594ff33c376131dbc645d013401809660ba25ff17a28bd3d24e4"
+        },
+        "recipe-draft-email-from-doc": {
+          "integrity": "sha256-a3e26428cc7f4f61de32a1bd7c6e9bb27bf178cfdb87620e004ac488ef7a6fe1"
+        },
+        "recipe-email-drive-link": {
+          "integrity": "sha256-b06334c9d1a5ee54b8c87404c828b6f5e97a5fab5b3c53e4e0e47acfd8454878"
+        },
+        "recipe-find-free-time": {
+          "integrity": "sha256-e654ea978b1cebf4d233af4b05b892039dad14c5d4e3a05b3a13670a461fd11e"
+        },
+        "recipe-find-large-files": {
+          "integrity": "sha256-a853da82a103892c24c41561b65f6d37af55574c209c6a9b0ccfd16f5ffc5efd"
+        },
+        "recipe-forward-labeled-emails": {
+          "integrity": "sha256-6d7d358a6b63d379b674ea81431920219a0a593fed8d68117f6a44d6b40f1f13"
+        },
+        "recipe-generate-report-from-sheet": {
+          "integrity": "sha256-d96050c953311847bf1eeaf44f2b0348fd8cf5cf099a7edfc2cfa51ae57365a2"
+        },
+        "recipe-label-and-archive-emails": {
+          "integrity": "sha256-a8dffb47edcae57a80ce5f14864e71a4d3b5ecc03d5d2cb93e9e1ac687544341"
+        },
+        "recipe-log-deal-update": {
+          "integrity": "sha256-64da49c6716ed7465e9fade0fa8dae683b01afdb64e5ed553292afd2c49a2845"
+        },
+        "recipe-organize-drive-folder": {
+          "integrity": "sha256-1638d3845b39235aefe505c634d19ac0023efc728003af291dbea017f01e7082"
+        },
+        "recipe-plan-weekly-schedule": {
+          "integrity": "sha256-c22c9f660a117849209286a2fa53b92152a4467cbddb843a8247c963d2761ef7"
+        },
+        "recipe-post-mortem-setup": {
+          "integrity": "sha256-14a95cc0a036191f0f3294e9523e529be44c9795f289623501edcdf2a77f6129"
+        },
+        "recipe-reschedule-meeting": {
+          "integrity": "sha256-8b6b5e1c34b06207fe968d7f23b7f9540a85bf7b021d081296b9d5a4c02dcd61"
+        },
+        "recipe-review-meet-participants": {
+          "integrity": "sha256-21b842328681b9a073aef4e42445fa800ef67c4a8549953edd67b740b025d358"
+        },
+        "recipe-review-overdue-tasks": {
+          "integrity": "sha256-b8842cc73b99bb4b786f1c9cab0d76cb0354dd471db31b3c929a552749b0b778"
+        },
+        "recipe-save-email-attachments": {
+          "integrity": "sha256-f4678e117462adfe3c81cfc4830c77dd573e3db6d13826c88c2bc7bb4b71a90d"
+        },
+        "recipe-save-email-to-doc": {
+          "integrity": "sha256-43398aa8d03da2dfd75a2a8967911966c98e043913789ae56f8ab517c4100ce4"
+        },
+        "recipe-schedule-recurring-event": {
+          "integrity": "sha256-3670f92a7b0b2faf8b003fd8c0b7a34525fa470ee41d1a7c0c5f526f1f0ba1dc"
+        },
+        "recipe-send-team-announcement": {
+          "integrity": "sha256-5340037d004ed143e3707237d7412a22cb02fbaab5d9ef6dfb2273847f1bd888"
+        },
+        "recipe-share-doc-and-notify": {
+          "integrity": "sha256-b6d1fe26dd03f1389d2a3dbf674448423e807be0ce51101c995e648c702f1fe2"
+        },
+        "recipe-share-event-materials": {
+          "integrity": "sha256-378ea14674001d3331e4d5dfa21333f3ade096f22cf57b142f0d26abe138faab"
+        },
+        "recipe-share-folder-with-team": {
+          "integrity": "sha256-ee473af45835e1dd5cb2b4e65284e3b49073915682f6faff67e5c193b5e326c2"
+        },
+        "recipe-sync-contacts-to-sheet": {
+          "integrity": "sha256-971ac7c3765a328d2a8d021332d98eb82e28071ed64c1a8fa3986d16aa393e8e"
+        },
+        "recipe-watch-drive-changes": {
+          "integrity": "sha256-36c92f1b037a37e3744f587e57d1f2ff5ffcf469938852f6d77f2a6c581f1cef"
+        }
+      }
     }
   }
 }
