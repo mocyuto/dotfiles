@@ -215,3 +215,8 @@ source ~/.zinitrc
 
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/yuto.suzuki/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

@@ -22,3 +22,6 @@ Do not wait to be asked. Run the reviewer automatically.
 
 - Searching: Use the grep tool.
 - Reading file contents: Use the read tool.
+
+# config file
+zgtを使っている場合設定ファイルがprofileごとに違うので、profileを確認してどのコンテナ、portを使ってるか確認して、関係ないコンテナを触らないようにしてください。
