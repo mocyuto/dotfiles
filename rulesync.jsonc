@@ -3,6 +3,7 @@
     "claudecode": ["rules", "subagents", "skills", "mcp", "permissions"],
     "agentsskills": ["skills"],
     "opencode": ["rules", "subagents", "mcp", "permissions"],
+    "codexcli": ["rules","subagents","mcp", "permissions"],
   },
   "outputRoots": ["."],
   "delete": true,

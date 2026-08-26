@@ -5,7 +5,7 @@
       "docker volume *": "deny",
       "git commit *": "ask",
       "aws *": "deny",
-      "rm *": "ask"
+      "rm -rf *": "ask"
     },
     "read": {
       ".env": "deny"
