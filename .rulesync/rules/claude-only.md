@@ -6,4 +6,4 @@ description: "Claude Code 専用ルール"
 
 # Claude Code 専用ルール
 
-<!-- ここに Claude Code にだけ適用したいルールを書く -->
+コードに記載するコメントは簡潔に体言止めで。
