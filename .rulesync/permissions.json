@@ -4,7 +4,6 @@
     "bash": {
       "docker volume *": "deny",
       "git commit *": "ask",
-      "aws *": "ask",
       "rm -rf *": "ask"
     },
     "read": {
