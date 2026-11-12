@@ -3,7 +3,6 @@
   "permission": {
     "bash": {
       "docker volume *": "deny",
-      "git commit *": "ask",
       "rm -rf *": "ask"
     },
     "read": {

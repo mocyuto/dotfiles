@@ -62,11 +62,6 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 # javascript用のPATH
 alias js="java -cp ~/Library/rhino1_7R4/js.jar org.mozilla.javascript.tools.shell.Main"
 
-# Android SDK for Mac 用のPATH設定
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export ANDROID_SDK=/Applications/adt-bundle-mac-x86_64-20140702/sdk/
-alias android=$ANDROID_SDK/tools/android
-alias adb=$ANDROID_SDK/platform-tools/adb
 
 #ant用
 export PATH=$PATH:/usr/local/Cellar/ant/1.9.2/bin
